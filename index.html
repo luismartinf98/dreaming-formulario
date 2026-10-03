@@ -1,0 +1,1706 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>DREAMING — Formulario de ingreso</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Formulario de ingreso DREAMING. Cuéntenos quién es, qué hace y qué necesita.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="DREAMING — Formulario de ingreso">
+<meta property="og:description" content="Diez minutos. Cuéntenos de su negocio y le preparamos el análisis.">
+<meta property="og:type" content="website">
+<style>
+  :root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin: 0; font: 14px system-ui, -apple-system, sans-serif; background: #fafaf9; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<style>
+  :root {
+    color-scheme: dark;
+    --void: #05060B; --panel: #0C0F1A; --panel-2: #121725; --field: #090C15;
+    --line: #1E2436; --line-lit: #2C3449;
+    --text: #F3F4FB; --text-2: #C9CCE0; --text-3: #8F94B0; --text-4: #6A6F8A;
+    --violet: #8B5CF6; --orange: #FF7A45; --blue: #0A5FFF; --indigo: #6366FF; --green: #3DDC97;
+    --red: #FF5C5C;
+    --glow: 0 0 0 1px rgba(139,92,246,.35), 0 0 24px -6px rgba(139,92,246,.45);
+  }
+  body {
+    background: var(--void); color: var(--text);
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
+    font-size: 15.5px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(900px 500px at 10% -8%, rgba(10,95,255,.17), transparent 70%),
+      radial-gradient(760px 440px at 95% 2%, rgba(139,92,246,.14), transparent 72%);
+    background-attachment: fixed;
+  }
+  * { box-sizing: border-box; }
+  .wrap { max-width: 780px; margin: 0 auto; padding-inline: 20px; }
+
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(5,6,11,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; }
+  .mark { font-family: "Sora", system-ui, sans-serif; font-weight: 800; font-size: 15px; letter-spacing: -.02em; display: flex; align-items: center; gap: 9px; }
+  .d { width: 24px; height: 24px; border-radius: 7px; flex: none; background: linear-gradient(135deg, var(--indigo), var(--violet)); display: grid; place-items: center; font-size: 13px; color: #fff; box-shadow: 0 2px 12px -2px rgba(139,92,246,.7); }
+  .via-tag { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--violet); background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.3); border-radius: 99px; padding: 3px 9px; white-space: nowrap; }
+  .track { margin-left: auto; flex: 1; max-width: 150px; height: 5px; background: var(--panel-2); border-radius: 99px; overflow: hidden; }
+  .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--blue), var(--violet), var(--orange)); border-radius: 99px; transition: width .35s ease; }
+  .pct { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; color: var(--text-3); font-variant-numeric: tabular-nums; flex: none; }
+  @media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+
+  header { padding-block: 46px 30px; }
+  .kicker { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); margin: 0 0 15px; }
+  h1 { font-family: "Sora", system-ui, sans-serif; font-weight: 800; font-size: clamp(31px, 7.2vw, 46px); line-height: 1.02; letter-spacing: -.035em; margin: 0 0 16px; text-wrap: balance; }
+  h1 i { font-style: normal; background: linear-gradient(100deg, var(--blue), var(--violet) 60%, var(--orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  header p { color: var(--text-3); margin: 0; max-width: 58ch; font-size: 16.5px; }
+
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+  .s-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 18px; }
+  .s-n { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; color: var(--blue); background: rgba(10,95,255,.13); border: 1px solid rgba(10,95,255,.3); width: 27px; height: 27px; border-radius: 8px; display: grid; place-items: center; flex: none; margin-top: 2px; }
+  h2 { font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -.02em; margin: 0 0 4px; line-height: 1.2; }
+  .s-head p { margin: 0; color: var(--text-4); font-size: 14px; line-height: 1.5; }
+
+  .f { margin-bottom: 17px; }
+  .f:last-child { margin-bottom: 0; }
+  label { display: block; font-size: 13.5px; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+  label .req { color: var(--orange); margin-left: 3px; }
+  .hint { font-weight: 400; color: var(--text-4); font-size: 12.5px; display: block; margin-top: 2px; }
+
+  input[type="text"], textarea, select { width: 100%; background: var(--field); color: var(--text); border: 1px solid var(--line-lit); border-radius: 10px; padding: 11px 13px; font-family: inherit; font-size: 15px; line-height: 1.5; }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text-4) 50%), linear-gradient(135deg, var(--text-4) 50%, transparent 50%); background-position: calc(100% - 18px) 19px, calc(100% - 13px) 19px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 36px; }
+  textarea { resize: vertical; min-height: 80px; }
+  input::placeholder, textarea::placeholder { color: #4D536B; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--violet); box-shadow: var(--glow); }
+  input.bad, textarea.bad, select.bad { border-color: var(--orange); }
+  .row { display: grid; gap: 12px; }
+  @media (min-width: 640px) { .row.two { grid-template-columns: 1fr 1fr; } }
+
+  /* ---- bifurcación ---- */
+  .fork { display: grid; gap: 11px; }
+  @media (min-width: 640px) { .fork { grid-template-columns: 1fr 1fr; } }
+  .fk { position: relative; }
+  .fk input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .fk .box { display: block; cursor: pointer; height: 100%; background: var(--field); border: 1px solid var(--line-lit); border-radius: 13px; padding: 18px; user-select: none; }
+  .fk .box b { display: block; font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 16px; color: var(--text-2); margin-bottom: 5px; letter-spacing: -.015em; }
+  .fk .box em { font-style: normal; display: block; font-size: 13px; color: var(--text-4); line-height: 1.5; }
+  .fk input:checked + .box { background: rgba(10,95,255,.11); border-color: var(--blue); }
+  .fk input:checked + .box b { color: var(--text); }
+  .fk:last-child input:checked + .box { background: rgba(255,122,69,.1); border-color: var(--orange); }
+  .fk input:focus-visible + .box { box-shadow: var(--glow); }
+
+  .needs { display: grid; gap: 10px; }
+  @media (min-width: 640px) { .needs { grid-template-columns: 1fr 1fr; } }
+  .need { position: relative; }
+  .need input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .need .box { display: block; cursor: pointer; height: 100%; background: var(--field); border: 1px solid var(--line-lit); border-radius: 12px; padding: 14px 15px; user-select: none; }
+  .need .box b { display: block; font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 14.5px; color: var(--text-2); margin-bottom: 3px; letter-spacing: -.01em; }
+  .need .box em { font-style: normal; display: block; font-size: 12.5px; color: var(--text-4); line-height: 1.45; }
+  .need input:checked + .box { background: rgba(139,92,246,.12); border-color: var(--violet); }
+  .need input:checked + .box b { color: var(--text); }
+  .need input:focus-visible + .box { box-shadow: var(--glow); }
+  .need.wide { grid-column: 1 / -1; }
+  .need.wide input:checked + .box { background: rgba(255,122,69,.1); border-color: var(--orange); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chip span { display: block; padding: 8px 14px; border-radius: 99px; cursor: pointer; background: var(--field); border: 1px solid var(--line-lit); font-size: 13.5px; font-weight: 500; color: var(--text-3); user-select: none; }
+  .chip input:checked + span { background: rgba(139,92,246,.14); border-color: var(--violet); color: var(--text); }
+  .chip input:focus-visible + span { box-shadow: var(--glow); }
+
+  .dx { border-top: 1px solid var(--line); padding-top: 15px; margin-top: 15px; }
+  .dx.first { border-top: 0; padding-top: 0; margin-top: 0; }
+  .dx-top { display: flex; align-items: baseline; gap: 9px; margin-bottom: 7px; }
+  .dx-area { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--violet); flex: none; }
+  .dx-q { font-size: 14.5px; font-weight: 600; color: var(--text-2); }
+
+  .warn { border-left: 3px solid var(--orange); background: rgba(255,122,69,.08); border-radius: 0 10px 10px 0; padding: 12px 16px; margin-top: 16px; font-size: 14px; color: var(--text-2); }
+  .warn b { color: var(--orange); }
+  .stop { border-left: 3px solid var(--red); background: rgba(255,92,92,.09); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 16px; font-size: 14.5px; color: var(--text-2); }
+  .stop b { color: var(--red); font-family: "Sora", system-ui, sans-serif; display: block; margin-bottom: 4px; font-size: 15px; }
+
+  .actions { padding-block: 10px 6px; }
+  .go { width: 100%; font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -.01em; color: #fff; cursor: pointer; background: linear-gradient(100deg, var(--blue), var(--violet) 55%, var(--orange)); border: 0; border-radius: 13px; padding: 16px; box-shadow: 0 8px 30px -10px rgba(139,92,246,.75); }
+  .go:hover { filter: brightness(1.09); }
+  .go:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+  .msg { margin-top: 12px; font-size: 14px; color: var(--orange); min-height: 20px; }
+  .msg.ok { color: var(--green); }
+  .draft { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; color: var(--green); min-height: 16px; margin-top: 10px; }
+
+  .out { margin-top: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line-lit); border-radius: 16px; padding: 22px 24px; margin-bottom: 14px; }
+  .card h3 { font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 17px; margin: 0 0 4px; letter-spacing: -.02em; }
+  .card .cap { color: var(--text-4); font-size: 13.5px; margin: 0 0 18px; }
+
+  .prio { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .dot { width: 11px; height: 11px; border-radius: 99px; flex: none; }
+  .prio b { font-family: "Sora", system-ui, sans-serif; font-size: 14px; }
+  .prio span { color: var(--text-4); font-size: 13.5px; }
+
+  .sem { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 9px; }
+  .sem-i { display: flex; align-items: center; gap: 9px; background: var(--field); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .sem-i b { font-size: 13px; font-weight: 600; color: var(--text-2); line-height: 1.25; }
+  .sem-i em { font-style: normal; display: block; font-size: 11px; color: var(--text-4); }
+
+  .dep { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px dashed var(--line); }
+  .dep:last-child { border-bottom: 0; }
+  .dep-n { font-family: "Sora", system-ui, sans-serif; font-size: 15px; font-weight: 800; color: var(--violet); flex: none; width: 24px; padding-top: 1px; }
+  .dep-b { min-width: 0; }
+  .dep-b b { display: block; font-family: "Sora", system-ui, sans-serif; font-size: 15.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; letter-spacing: -.01em; }
+  .dep-b p { margin: 0 0 6px; font-size: 13.5px; color: var(--text-3); line-height: 1.5; }
+  .dep-b .why { font-size: 12.5px; color: var(--text-4); }
+  .dep-b .why s { text-decoration: none; color: var(--red); }
+  .dep-b code { display: inline-block; margin-top: 6px; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; color: var(--green); background: rgba(61,220,151,.09); padding: 2px 7px; border-radius: 5px; word-break: break-word; }
+  .later { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--text-4); }
+  .later b { color: var(--text-3); font-family: "Sora", system-ui, sans-serif; font-size: 13px; }
+
+  .out-box { background: #04050A; border: 1px solid var(--line-lit); border-radius: 14px; overflow: hidden; }
+  .out-head { display: flex; align-items: center; gap: 10px; padding: 11px 15px; border-bottom: 1px solid var(--line); background: var(--panel); font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-4); }
+  .cp { margin-left: auto; font-family: inherit; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; background: rgba(139,92,246,.16); border: 1px solid rgba(139,92,246,.4); color: #D9CBFF; border-radius: 7px; padding: 6px 12px; }
+  .cp:hover { background: rgba(139,92,246,.3); color: #fff; }
+  pre { margin: 0; padding: 16px; overflow-x: auto; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; line-height: 1.7; color: var(--text-2); white-space: pre-wrap; }
+
+  footer { padding-block: 28px 54px; color: var(--text-4); font-size: 13px; }
+  footer p { margin: 0 0 5px; }
+  :focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+</style>
+
+<div class="top">
+  <div class="wrap">
+    <div class="mark"><span class="d">D</span>DREAMING</div>
+    <span class="via-tag" id="viaTag" hidden></span>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <span class="pct" id="pct">0%</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">Fase 1 · Ingreso y análisis</p>
+  <h1>Quién es, qué hace y <i>qué necesita</i></h1>
+  <p>El formulario cambia según si el negocio ya existe o lo vamos a crear desde cero. Al terminar entrega el semáforo, los departamentos que deben trabajar y en qué orden.</p>
+</header>
+
+<form id="ficha">
+
+  <!-- ============ 00 · BIFURCACIÓN ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">00</span>
+      <div><h2>¿Dónde estamos arrancando?</h2><p>Esta respuesta cambia todo el resto del formulario.</p></div>
+    </div>
+    <div class="fork">
+      <label class="fk"><input type="radio" name="via" value="marcha">
+        <span class="box"><b>El negocio ya existe</b><em>Está operando, vende, tiene clientes. Hay historia que medir y cosas que arreglar.</em></span></label>
+      <label class="fk"><input type="radio" name="via" value="cero">
+        <span class="box"><b>Vamos a crearlo desde cero</b><em>Todavía no abre. Hay una idea, o un local, o ganas. Nada que medir — todo que construir.</em></span></label>
+    </div>
+  </section>
+
+  <div id="body" hidden>
+
+  <!-- ============ 01 · QUIÉN ES ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">01</span>
+      <div><h2>Quién es</h2><p>Con quién estamos hablando y desde dónde.</p></div>
+    </div>
+    <div class="row two">
+      <div class="f"><label for="nombre">Su nombre <span class="req">*</span></label>
+        <input type="text" id="nombre" placeholder="Luis Martínez"></div>
+      <div class="f"><label for="rol">Su rol <span class="req">*</span></label>
+        <input type="text" id="rol" placeholder="Dueño / socio / fundador"></div>
+    </div>
+    <div class="f"><label for="negocio" id="lblNegocio">Nombre del negocio <span class="req">*</span></label>
+      <input type="text" id="negocio" placeholder="Twelve Caracas"></div>
+    <div class="row two">
+      <div class="f"><label for="rubro">Rubro <span class="req">*</span></label>
+        <select id="rubro"><option value="">Seleccione…</option>
+          <option>Bar / discoteca</option><option>Restaurante / cafetería</option>
+          <option>Comercio / tienda</option><option>Servicios profesionales</option>
+          <option>Salud / estética</option><option>Educación / formación</option>
+          <option>Creador de contenido / streamer</option><option>Inmobiliaria / construcción</option>
+          <option>Turismo / hotelería</option><option>Otro</option></select></div>
+      <div class="f"><label for="ciudad">Ciudad y zona <span class="req">*</span></label>
+        <input type="text" id="ciudad" placeholder="Caracas — Las Mercedes"></div>
+    </div>
+    <div class="row two">
+      <div class="f via-marcha"><label for="tiempo">Tiempo operando</label>
+        <select id="tiempo"><option value="">Seleccione…</option>
+          <option>Menos de 1 año</option><option>1 a 3 años</option>
+          <option>3 a 10 años</option><option>Más de 10 años</option></select></div>
+      <div class="f via-cero" hidden><label for="apertura">¿Para cuándo quiere abrir?</label>
+        <select id="apertura"><option value="">Seleccione…</option>
+          <option>En menos de 1 mes</option><option>En 1 a 3 meses</option>
+          <option>En 3 a 6 meses</option><option>En más de 6 meses</option>
+          <option>No tengo fecha todavía</option></select></div>
+      <div class="f"><label for="contacto">WhatsApp o correo <span class="req">*</span></label>
+        <input type="text" id="contacto" placeholder="+58 414 000 0000"></div>
+    </div>
+    <div class="row two">
+      <div class="f"><label for="sedes" id="lblSedes">¿Cuántas sedes o puntos de venta tiene? <span class="req">*</span></label>
+        <select id="sedes"><option value="">Seleccione…</option>
+          <option>Una sola</option><option>Dos</option>
+          <option>Tres a cinco</option><option>Más de cinco</option>
+          <option>Ninguna física, solo delivery o en línea</option></select></div>
+      <div class="f"><label for="sedes_rend" id="lblRend">Si tiene más de una, ¿rinden parecido?</label>
+        <select id="sedes_rend"><option value="">No aplica / una sola</option>
+          <option>Todas rinden parecido</option>
+          <option>Una rinde mucho más que las otras</option>
+          <option>No sé, no las comparo por separado</option></select></div>
+    </div>
+    <div class="f"><label for="sedes_lista">Nombre y zona de cada sede
+      <span class="hint">Una por línea. Si es una sola, deje la zona exacta.</span></label>
+      <textarea id="sedes_lista" placeholder="Las Mercedes — Torre Torca&#10;La Trinidad — C.C. Trinidad Tepuy"></textarea></div>
+  </section>
+
+  <!-- ============ 02-A · QUÉ HACE (negocio en marcha) ============ -->
+  <section class="via-marcha">
+    <div class="s-head">
+      <span class="s-n">02</span>
+      <div><h2>Qué hace</h2><p>El negocio por dentro. Sin esto, cualquier propuesta es un disparo al aire.</p></div>
+    </div>
+    <div class="f"><label for="vende">¿Qué vende exactamente? <span class="req">*</span>
+      <span class="hint">Sus dos o tres productos o servicios que más facturan.</span></label>
+      <textarea id="vende" placeholder="Coctelería de autor, cervezas importadas y tablas para compartir. El 60% de la venta son cócteles."></textarea></div>
+    <div class="row two">
+      <div class="f"><label for="ticket">Ticket promedio por cliente</label>
+        <input type="text" id="ticket" placeholder="18 $ por persona"></div>
+      <div class="f"><label for="capacidad">Capacidad o tope de atención</label>
+        <input type="text" id="capacidad" placeholder="60 puestos, llenamos jueves a sábado"></div>
+    </div>
+    <div class="f"><label for="ideal">¿Quién es su mejor cliente? <span class="req">*</span>
+      <span class="hint">El que deja más dinero y vuelve. Edad, zona, con quién viene, qué busca.</span></label>
+      <textarea id="ideal" placeholder="Profesionales de 28 a 40, de Chacao, vienen en pareja o grupo de 4, buscan ambiente tranquilo y buen trago."></textarea></div>
+    <div class="f"><label for="diferencia">¿Por qué lo eligen a usted y no al de al lado? <span class="req">*</span></label>
+      <textarea id="diferencia" placeholder="Nuestro bartender es conocido y la carta rota cada mes. Pero no sé si el cliente lo percibe."></textarea></div>
+    <div class="f"><label for="rivales">Sus dos o tres competidores directos</label>
+      <input type="text" id="rivales" placeholder="Nombres y, si sabe, su Instagram"></div>
+    <div class="f"><label>¿Cómo le llegan los clientes HOY? <span class="req">*</span>
+      <span class="hint">Marque lo real, no lo que le gustaría.</span></label>
+      <div class="chips" id="canales">
+        <label class="chip"><input type="checkbox" value="Boca en boca"><span>Boca en boca</span></label>
+        <label class="chip"><input type="checkbox" value="Instagram"><span>Instagram</span></label>
+        <label class="chip"><input type="checkbox" value="TikTok"><span>TikTok</span></label>
+        <label class="chip"><input type="checkbox" value="Google o Maps"><span>Google / Maps</span></label>
+        <label class="chip"><input type="checkbox" value="Pasan por el frente"><span>Pasan por el frente</span></label>
+        <label class="chip"><input type="checkbox" value="Clientes que repiten"><span>Repiten</span></label>
+        <label class="chip"><input type="checkbox" value="Influencers o aliados"><span>Influencers</span></label>
+        <label class="chip"><input type="checkbox" value="Anuncios pagados"><span>Anuncios pagados</span></label>
+      </div></div>
+  </section>
+
+  <!-- ============ 02-B · LA IDEA (desde cero) ============ -->
+  <section class="via-cero" hidden>
+    <div class="s-head">
+      <span class="s-n">02</span>
+      <div><h2>La idea</h2><p>Qué va a montar y para quién. Mientras más concreto, menos dinero se pierde después.</p></div>
+    </div>
+    <div class="f"><label for="idea">¿Qué quiere montar? <span class="req">*</span>
+      <span class="hint">En dos o tres frases, como se lo explicaría a un amigo.</span></label>
+      <textarea id="idea" placeholder="Un bar de coctelería pequeño en Los Palos Grandes, 30 puestos, enfocado en tragos de autor y música en vivo los jueves."></textarea></div>
+    <div class="f"><label for="problema_mkt">¿Qué problema le resuelve a la gente, o qué le da que hoy no encuentra? <span class="req">*</span></label>
+      <textarea id="problema_mkt" placeholder="En la zona todo es muy ruidoso o muy caro. No hay dónde conversar tomando algo bueno sin gritar."></textarea></div>
+    <div class="f"><label for="publico">¿A quién le va a vender? <span class="req">*</span>
+      <span class="hint">Edad, zona, cuánto gasta, qué hace. Si dice "a todo el mundo", el análisis lo va a marcar como riesgo.</span></label>
+      <textarea id="publico" placeholder="Profesionales de 30 a 45 que viven o trabajan en la zona, gastan 20 a 30 $ en una salida de semana."></textarea></div>
+    <div class="row two">
+      <div class="f"><label for="precio_obj">¿Cuánto piensa cobrar?</label>
+        <input type="text" id="precio_obj" placeholder="Trago entre 7 y 12 $, ticket de 25 $"></div>
+      <div class="f"><label for="inversion">¿Cuánto tiene para arrancar?</label>
+        <input type="text" id="inversion" placeholder="8.000 $ propios, más un socio que pondría 5.000 $"></div>
+    </div>
+    <div class="f"><label for="competencia_cero">¿Quién ya hace algo parecido en su zona?</label>
+      <input type="text" id="competencia_cero" placeholder="Nombres, o 'no he mirado todavía'"></div>
+    <div class="f"><label>¿Qué tiene ya listo? <span class="req">*</span></label>
+      <div class="chips" id="tiene">
+        <label class="chip"><input type="checkbox" value="Nombre decidido"><span>Nombre</span></label>
+        <label class="chip"><input type="checkbox" value="Logo o identidad"><span>Logo</span></label>
+        <label class="chip"><input type="checkbox" value="Local o punto"><span>Local</span></label>
+        <label class="chip"><input type="checkbox" value="Permisos en trámite o listos"><span>Permisos</span></label>
+        <label class="chip"><input type="checkbox" value="Proveedores contactados"><span>Proveedores</span></label>
+        <label class="chip"><input type="checkbox" value="Equipo o socios"><span>Equipo</span></label>
+        <label class="chip"><input type="checkbox" value="Producto o carta definida"><span>Producto</span></label>
+        <label class="chip"><input type="checkbox" value="Capital disponible"><span>Capital</span></label>
+        <label class="chip"><input type="checkbox" value="Nada todavía, solo la idea"><span>Solo la idea</span></label>
+      </div></div>
+    <div class="f"><label for="miedo">¿Qué es lo que más miedo le da de este proyecto?
+      <span class="hint">Es la pregunta más honesta del formulario y la más útil.</span></label>
+      <textarea id="miedo" placeholder="Que invierta todo y no venga nadie. O que el local me salga mal ubicado."></textarea></div>
+  </section>
+
+  <!-- ============ 03 · QUÉ QUIERE ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">03</span>
+      <div><h2>Qué quiere</h2><p>La meta y el dolor. En sus palabras.</p></div>
+    </div>
+    <div class="f"><label for="meta">¿Dónde quiere estar en 6 meses? <span class="req">*</span>
+      <span class="hint">Con un número si puede: cuántos clientes, cuánto facturar, cuántas horas libres.</span></label>
+      <textarea id="meta" placeholder="Abierto, con los jueves y viernes llenos, cubriendo gastos desde el mes 3."></textarea></div>
+    <div class="f"><label for="dolor" id="lblDolor">¿Qué es lo que más le molesta hoy? <span class="req">*</span></label>
+      <textarea id="dolor" placeholder="Cierro el mes y no cuadra. Faltan botellas y nadie sabe nada."></textarea></div>
+    <div class="f"><label for="intentado">¿Qué ya intentó, y por qué no funcionó?</label>
+      <textarea id="intentado" placeholder="Contraté un community manager tres meses y no vi nada."></textarea></div>
+    <div class="f via-marcha"><label for="costo">¿Cuánto le está costando el problema?
+      <span class="hint">Dinero al mes, horas por semana, o clientes perdidos. Aproximado sirve.</span></label>
+      <input type="text" id="costo" placeholder="Unos 300 $ al mes en licor que no aparece y 15 horas mías por semana"></div>
+    <div class="f"><label id="lblNeeds">¿Qué cree que necesita? <span class="req">*</span>
+      <span class="hint">Marque todo lo que aplique. Lo que usted crea cuenta, y el análisis lo contrasta.</span></label>
+      <div class="needs" id="needs">
+        <label class="need"><input type="checkbox" value="clientes"><span class="box"><b>Más clientes</b><em>Vende menos de lo que podría, o se los lleva la competencia.</em></span></label>
+        <label class="need"><input type="checkbox" value="sistema"><span class="box"><b>Un sistema o app a medida</b><em>Necesita una herramienta que no existe y la quiere suya.</em></span></label>
+        <label class="need"><input type="checkbox" value="control"><span class="box"><b>Controlar el negocio por dentro</b><em>Inventario, caja, cierres. No sabe dónde se le va el dinero.</em></span></label>
+        <label class="need"><input type="checkbox" value="automatizar"><span class="box"><b>Automatizar lo manual</b><em>Tareas repetitivas, hojas de cálculo, mensajes uno por uno.</em></span></label>
+        <label class="need"><input type="checkbox" value="asistente"><span class="box"><b>Asistente de IA 24 horas</b><em>Que responda precios, horarios y reservas sin que nadie esté.</em></span></label>
+        <label class="need"><input type="checkbox" value="presencia"><span class="box"><b>Presencia digital</b><em>Web y Google. Que lo encuentren cuando lo buscan.</em></span></label>
+        <label class="need"><input type="checkbox" value="reputacion"><span class="box"><b>Reputación y reseñas</b><em>Reseñas malas sin responder, o demasiado pocas.</em></span></label>
+        <label class="need"><input type="checkbox" value="contenido"><span class="box"><b>Contenido para redes</b><em>No tiene qué publicar, o publica y nadie reacciona.</em></span></label>
+        <label class="need"><input type="checkbox" value="equipo"><span class="box"><b>Que el equipo trabaje sin usted</b><em>Todo pasa por sus manos y no puede despegarse.</em></span></label>
+        <label class="need"><input type="checkbox" value="personal"><span class="box"><b>Marca personal</b><em>Es creador, streamer o la cara del negocio.</em></span></label>
+        <label class="need via-cero" hidden><input type="checkbox" value="marca"><span class="box"><b>Nombre, logo e identidad</b><em>Hay que crear la marca desde cero: nombre, paleta, logo, tono.</em></span></label>
+        <label class="need via-cero" hidden><input type="checkbox" value="validar"><span class="box"><b>Saber si la idea sirve</b><em>Antes de invertir, confirmar que hay mercado y a qué precio.</em></span></label>
+        <label class="need wide"><input type="checkbox" value="nose"><span class="box"><b>Tengo un problema pero no sé qué necesito</b><em>Perfecto. Entonces el primer paso es un diagnóstico, no una propuesta.</em></span></label>
+      </div></div>
+  </section>
+
+  <!-- ============ 04-A · DIAGNÓSTICO (negocio en marcha) ============ -->
+  <section class="via-marcha">
+    <div class="s-head">
+      <span class="s-n">04</span>
+      <div><h2>Diagnóstico de las diez áreas</h2><p>Este bloque es el motor. Responda con la verdad, no con lo que debería ser.</p></div>
+    </div>
+    <div id="dxA"></div>
+  </section>
+
+  <!-- ============ 04-B · PREPARACIÓN (desde cero) ============ -->
+  <section class="via-cero" hidden>
+    <div class="s-head">
+      <span class="s-n">04</span>
+      <div><h2>Qué tan listo está para arrancar</h2><p>Aquí no se mide el negocio — se mide la preparación. Es lo que decide si se construye ya o se valida primero.</p></div>
+    </div>
+    <div id="dxB"></div>
+    <div class="warn"><p><b>Esto no es un examen.</b> Un "todavía no" honesto aquí le ahorra miles de dólares. Un "sí" inflado los pierde.</p></div>
+  </section>
+
+  <!-- ============ 04-C · DOMINIO DEL NEGOCIO ============ -->
+  <section class="via-marcha">
+    <div class="s-head">
+      <span class="s-n">04b</span>
+      <div><h2>Cuánto conoce su propio negocio</h2><p>Por encima, sin buscar papeles. No es un examen — es para saber desde dónde arrancamos.</p></div>
+    </div>
+    <div id="dxD"></div>
+    <div class="warn"><p><b>Para qué sirve.</b> Un negocio que no conoce sus costos no se puede hacer crecer: traerle más clientes multiplica la pérdida en vez de la ganancia. Si aquí sale rojo, lo primero es ordenar los números, no hacer campañas.</p></div>
+  </section>
+
+  <!-- ============ 05 · TAMAÑO ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">05</span>
+      <div><h2>Tamaño y recursos</h2><p>Para dimensionar la solución. Rangos aproximados.</p></div>
+    </div>
+    <div class="row two">
+      <div class="f"><label for="gente" id="lblGente">¿Cuánta gente trabaja ahí?</label>
+        <select id="gente"><option value="">Seleccione…</option><option>Solo yo</option>
+          <option>2 a 5</option><option>6 a 15</option><option>16 a 50</option><option>Más de 50</option></select></div>
+      <div class="f via-marcha"><label for="ventas">Ventas aproximadas al mes</label>
+        <select id="ventas"><option value="">Prefiero no decir</option>
+          <option>Menos de 1.000 $</option><option>1.000 a 5.000 $</option>
+          <option>5.000 a 20.000 $</option><option>20.000 a 50.000 $</option><option>Más de 50.000 $</option></select></div>
+      <div class="f via-cero" hidden><label for="ventas_obj">Ventas que necesita al mes para cubrir gastos</label>
+        <select id="ventas_obj"><option value="">No lo he calculado</option>
+          <option>Menos de 1.000 $</option><option>1.000 a 5.000 $</option>
+          <option>5.000 a 20.000 $</option><option>20.000 a 50.000 $</option><option>Más de 50.000 $</option></select></div>
+    </div>
+    <div class="f via-marcha"><label>¿Qué usa hoy para manejar el negocio?</label>
+      <div class="chips" id="herr">
+        <label class="chip"><input type="checkbox" value="Papel y cuaderno"><span>Papel</span></label>
+        <label class="chip"><input type="checkbox" value="Excel o Sheets"><span>Excel / Sheets</span></label>
+        <label class="chip"><input type="checkbox" value="WhatsApp"><span>WhatsApp</span></label>
+        <label class="chip"><input type="checkbox" value="Un sistema comprado"><span>Sistema comprado</span></label>
+        <label class="chip"><input type="checkbox" value="Punto de venta"><span>Punto de venta</span></label>
+        <label class="chip"><input type="checkbox" value="Nada, todo en la cabeza"><span>Nada</span></label>
+      </div></div>
+    <div class="f"><label for="equipo_mkt" id="lblMkt">¿Quién se ocupa hoy del marketing?</label>
+      <input type="text" id="equipo_mkt" placeholder="Yo cuando me acuerdo / mi sobrina / una agencia / nadie"></div>
+  </section>
+
+  <!-- ============ 06 · PRESUPUESTO ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">06</span>
+      <div><h2>Urgencia y presupuesto</h2><p>Claro de entrada para no perder el tiempo de nadie.</p></div>
+    </div>
+    <div class="row two">
+      <div class="f"><label for="urgencia">¿Para cuándo lo necesita? <span class="req">*</span></label>
+        <select id="urgencia"><option value="">Seleccione…</option>
+          <option>Ya, es urgente</option><option>Este mes</option>
+          <option>En 2 o 3 meses</option><option>Estoy explorando, sin prisa</option></select></div>
+      <div class="f"><label for="presupuesto">¿Cuánto puede invertir al mes? <span class="req">*</span></label>
+        <select id="presupuesto"><option value="">Seleccione…</option>
+          <option>No sé todavía, quiero ver opciones</option><option>Menos de 150 $</option>
+          <option>150 a 300 $</option><option>300 a 600 $</option>
+          <option>600 a 1.200 $</option><option>Más de 1.200 $</option></select></div>
+    </div>
+    <div class="f"><label for="decide">¿Quién decide y paga?</label>
+      <select id="decide"><option value="">Seleccione…</option><option>Yo solo</option>
+        <option>Yo con un socio</option><option>Tengo que consultarlo con otra persona</option></select></div>
+    <div class="warn"><p><b>Por qué se pregunta.</b> Una solución de 100 $ y una de 1.000 $ resuelven cosas distintas. Decirlo ahora evita una propuesta que no le sirve.</p></div>
+  </section>
+
+  <!-- ============ 07 · SIGUIENTE PASO ============ -->
+  <section>
+    <div class="s-head">
+      <span class="s-n">07</span>
+      <div><h2>Siguiente paso</h2><p>Cómo seguimos después de esta ficha.</p></div>
+    </div>
+    <div class="f"><label for="espera">¿Qué espera de nosotros, concretamente?</label>
+      <textarea id="espera" placeholder="Quiero que alguien me diga qué está mal y me lo resuelva, no que me mande un informe y se vaya."></textarea></div>
+    <div class="f"><label for="accesos">¿A qué tiene acceso para entregarnos?
+      <span class="hint">Nunca contraseñas por aquí. Solo diga qué existe y a nombre de quién.</span></label>
+      <input type="text" id="accesos" placeholder="Instagram lo maneja mi sobrina, el Google Maps no sé quién lo creó"></div>
+    <div class="f"><label>¿Cuándo puede conversar 30 minutos?</label>
+      <div class="chips" id="dispo">
+        <label class="chip"><input type="checkbox" value="Mañanas"><span>Mañanas</span></label>
+        <label class="chip"><input type="checkbox" value="Tardes"><span>Tardes</span></label>
+        <label class="chip"><input type="checkbox" value="Noches"><span>Noches</span></label>
+        <label class="chip"><input type="checkbox" value="Fin de semana"><span>Fin de semana</span></label>
+        <label class="chip"><input type="checkbox" value="Prefiero por escrito"><span>Mejor por escrito</span></label>
+      </div></div>
+  </section>
+
+  <div class="actions">
+    <button type="button" class="go" id="go" disabled>Elija una vía arriba para empezar</button>
+    <p class="msg" id="msg"></p>
+    <p class="draft" id="draft"></p>
+  </div>
+
+  </div><!-- /body -->
+
+</form>
+
+<div class="out" id="gracias" hidden>
+  <div class="card" style="text-align:center">
+    <div style="font-size:40px;line-height:1;margin-bottom:14px">✓</div>
+    <h3 style="font-size:22px">Listo, recibimos su información</h3>
+    <p class="cap" id="graciasTxt" style="margin-bottom:0"></p>
+  </div>
+  <div class="warn" style="margin-top:0;margin-bottom:14px;border-left-color:#3DDC97;background:rgba(61,220,151,.08)">
+    <p><b style="color:#3DDC97">Un último paso, y es el importante.</b><br>
+    Toque <strong>Copiar</strong> aquí abajo y pegue el texto en <strong>la misma conversación de WhatsApp por donde le llegó este enlace</strong>. Con eso nos llega su información y le respondemos con el análisis de su negocio.</p>
+  </div>
+  <div class="out-box">
+    <div class="out-head">Sus respuestas — copie y pegue<button type="button" class="cp" id="cpResp">Copiar</button></div>
+    <pre id="mdResp"></pre>
+  </div>
+  <p class="cap" style="margin-top:12px">Si el botón de copiar no funciona en su teléfono, el texto queda seleccionado y lo puede copiar a mano.</p>
+</div>
+
+<div class="out" id="out" hidden>
+  <div class="warn" style="border-left-color:#8B5CF6;background:rgba(139,92,246,.09);margin-bottom:16px">
+    <p><b>Vista interna DREAMING.</b> Esto no lo ve el cliente — su pantalla muestra solo la confirmación.</p>
+  </div>
+  <div class="stop" id="stop" hidden></div>
+  <div class="card">
+    <div class="prio"><span class="dot" id="dot"></span><b id="prioT"></b><span id="prioW"></span></div>
+    <h3 id="semT">Semáforo</h3>
+    <p class="cap" id="semCap"></p>
+    <div class="sem" id="sem"></div>
+  </div>
+  <div class="card" id="domCard" hidden>
+    <div class="prio"><span class="dot" id="domDot"></span><b id="domT"></b><span id="domW"></span></div>
+    <h3>Dominio del negocio</h3>
+    <p class="cap" id="domCap"></p>
+    <div class="sem" id="domSem"></div>
+  </div>
+  <div class="card">
+    <h3>Urgencia, presupuesto y capacidad real</h3>
+    <p class="cap" id="capCap"></p>
+    <div class="sem" id="cap3"></div>
+    <div id="alerts"></div>
+  </div>
+  <div class="card">
+    <h3 id="depT">Departamentos que deben trabajar</h3>
+    <p class="cap" id="depCap"></p>
+    <div id="deps"></div>
+    <div class="later" id="later" hidden></div>
+  </div>
+  <div class="card">
+    <h3>Recomendaciones</h3>
+    <p class="cap">Sacadas de sus propias respuestas. Lo gratis va primero — casi siempre es lo que más mueve.</p>
+    <div id="reco"></div>
+    <div id="noreco"></div>
+  </div>
+  <div class="card">
+    <h3>Lo que hay que verificar antes de proponer</h3>
+    <p class="cap">Todo lo de arriba lo dijo el cliente de sí mismo. Esto es la lista de lo que Claude debe comprobar por fuera y contrastar.</p>
+    <div id="verif"></div>
+  </div>
+  <div class="out-box">
+    <div class="out-head">Ficha + análisis — pegar en Claude<button type="button" class="cp" id="cp">Copiar</button></div>
+    <pre id="md"></pre>
+  </div>
+</div>
+
+<footer>
+  <p>DREAMING · Del sueño al check</p>
+  <p>Este formulario no envía nada solo y nunca pide contraseñas. Al analizar, copie la ficha y mándela por WhatsApp.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+
+  /* ================= departamentos ================= */
+  var DEP = {
+    diagnostico: { n: "Diagnóstico", d: "Semáforo de 9 áreas, cliente incógnito y espejo del rival. Gratis, 48 horas.", s: "dreaming-marketing:diagnostico" },
+    validacion:  { n: "Validación de mercado", d: "Confirmar que hay gente dispuesta a pagar, y a qué precio, antes de invertir. Espionaje del rubro y mapa de la comunidad.", s: "dreaming-marketing:mapa-comunidad · espionaje" },
+    modelo:      { n: "Modelo y números", d: "Costos reales, punto de equilibrio, ticket objetivo y cuántos clientes hacen falta para no perder dinero.", s: "dreaming-marketing:presupuesto" },
+    marca:       { n: "Marca e identidad", d: "Nombre, paleta, logo, tono de voz y manual de marca. La base de todo lo que se publique después.", s: "dreaming-marketing:diseno-post" },
+    operativo:   { n: "Legal y operativo", d: "Registro, permisos, proveedores, local y la lista de lo que falta para poder abrir la puerta.", s: "dreaming-marketing:cliente" },
+    reputacion:  { n: "Reputación", d: "Respuestas a reseñas en la voz de la marca y sistema para que los clientes contentos dejen huella.", s: "dreaming-marketing:reputacion" },
+    presencia:   { n: "Presencia y Web", d: "Ficha de Google Maps, datos estructurados, aparecer en ChatGPT y página de campaña.", s: "dreaming-marketing:google · landing" },
+    contenido:   { n: "Contenido", d: "Reels y carruseles con gancho de 3 segundos, diseño con la marca y calendario de publicación.", s: "dreaming-marketing:video · diseno-post" },
+    ofensiva:    { n: "Ofensiva", d: "Espionaje al rival, oferta que lo supera y Meta Ads con cerco geográfico.", s: "dreaming-marketing:espionaje · ofensiva" },
+    lanzamiento: { n: "Lanzamiento", d: "Oferta de apertura, campaña de expectativa, influencers locales y las primeras cuatro semanas.", s: "dreaming-marketing:ofensiva" },
+    atencion:    { n: "Atención y Conversión", d: "WhatsApp Business, guiones hasta cerrar y asistente de IA que atiende 24 horas.", s: "dreaming-marketing:whatsapp · agentes-ia" },
+    fidelizacion:{ n: "Fidelización", d: "Referidos, campañas de cumpleaños, recuperación de los que dejaron de venir y tarjeta de puntos.", s: "dreaming-marketing:fidelizacion" },
+    sistemas:    { n: "Sistemas", d: "App a medida con roles y permisos: inventario, caja, cierres y automatización. Pasa por las 5 compuertas.", s: "fabrica" },
+    medicion:    { n: "Medición y Radar", d: "Saber de dónde llega cada cliente, informe mensual y vigilancia semanal de los rivales.", s: "dreaming-marketing:radar" },
+    personal:    { n: "Marca Personal", d: "Clips del directo, comunidad, colaboraciones, monetización y media kit.", s: "dreaming-marketing:creadores" }
+  };
+
+  /* ================= vía A: diez áreas ================= */
+  var AREAS = [
+    { id:"reputacion", a:"Reputación", dep:"reputacion", q:"¿Qué pasa con sus reseñas en Google?",
+      o:[["2","Tenemos muchas, buenas, y las respondemos todas"],["1","Tenemos algunas pero no las respondemos"],["0","Casi no tenemos, o hay malas sin responder"],["0","No sé si tenemos reseñas"]] },
+    { id:"atencion", a:"Atención", dep:"atencion", q:"Si un cliente escribe a las 10 de la noche, ¿qué pasa?",
+      o:[["2","Le responden en minutos, siempre hay alguien pendiente"],["1","Le responden al día siguiente"],["0","Puede quedarse sin respuesta"],["0","No sé, nadie lleva la cuenta"]] },
+    { id:"oferta", a:"Oferta", dep:"ofensiva", q:"¿Tiene una oferta clara y distinta a la del vecino?",
+      o:[["2","Sí, y funciona: la gente viene por eso"],["1","Tengo promociones pero cambian sin plan"],["0","No tengo nada, o es lo mismo que hacen todos"]] },
+    { id:"web", a:"Web", dep:"presencia", q:"¿Tiene página web?",
+      o:[["2","Sí, se ve bien en celular y se puede reservar o comprar"],["1","Sí, pero está vieja o no se puede hacer nada en ella"],["0","No tengo web"]] },
+    { id:"google", a:"Google", dep:"presencia", q:"Si alguien busca su rubro en su zona, ¿aparece usted?",
+      o:[["2","Sí, salgo entre los primeros"],["1","Aparezco pero muy abajo"],["0","No aparezco, o mi ficha está incompleta"],["0","Nunca lo he probado"]] },
+    { id:"redes", a:"Redes", dep:"contenido", q:"¿Cada cuánto publica y quién lo hace?",
+      o:[["2","Varias veces por semana, con alguien a cargo"],["1","Cuando me acuerdo, lo hago yo"],["0","Casi nunca, o la cuenta está abandonada"]] },
+    { id:"anuncios", a:"Anuncios", dep:"ofensiva", q:"¿Invierte en anuncios pagados?",
+      o:[["2","Sí, con presupuesto fijo y sé cuánto me devuelve"],["1","A veces impulso una publicación"],["0","Nunca he invertido"],["0","Invertí y perdí la plata"]] },
+    { id:"medicion", a:"Medición", dep:"medicion", q:"¿Sabe de dónde llegó cada cliente nuevo del mes pasado?",
+      o:[["2","Sí, lo medimos y tengo los números"],["1","Más o menos, por intuición"],["0","No tengo idea"]] },
+    { id:"retencion", a:"Retención", dep:"fidelizacion", q:"¿Sus clientes vuelven, y tiene cómo saberlo?",
+      o:[["2","Vuelven, los tengo identificados y hay beneficios para ellos"],["1","Creo que vuelven pero no lo registro"],["0","No vuelven, o no tengo ni cómo saberlo"]] },
+    { id:"procesos", a:"Procesos", dep:"sistemas", q:"El control interno — inventario, caja, cierres — ¿cómo está?",
+      o:[["2","Tengo un sistema y los números cuadran"],["1","Lo llevo en papel o Excel y a veces no cuadra"],["0","No lo controlo, o cada mes aparecen faltantes"],["0","Todo pasa por mis manos o no funciona"]] }
+  ];
+
+  /* ================= vía B: ocho señales ================= */
+  var PREP = [
+    { id:"claridad", a:"Idea", dep:"modelo", q:"¿Qué tan definido tiene lo que va a vender?",
+      o:[["2","Definido, con carta o catálogo y precios puestos"],["1","Tengo la idea general, los detalles no"],["0","Todavía estoy explorando qué vender"]] },
+    { id:"validacion", a:"Validación", dep:"validacion", q:"¿Ha confirmado que alguien pagaría por esto?",
+      o:[["2","Sí, tengo preventas, reservas o clientes esperando"],["1","He hablado con gente del público y les gusta la idea"],["0","No le he preguntado a nadie todavía"]] },
+    { id:"rubro", a:"Experiencia", dep:"operativo", q:"¿Conoce el rubro por dentro?",
+      o:[["2","Trabajé años en esto, sé cómo funciona"],["1","Algo sé, he estado cerca"],["0","Es completamente nuevo para mí"]] },
+    { id:"capital", a:"Capital", dep:"modelo", q:"¿Tiene el dinero para arrancar?",
+      o:[["2","Sí, completo y con un colchón aparte"],["1","Tengo una parte, falta conseguir el resto"],["0","Todavía lo estoy buscando"]] },
+    { id:"colchon", a:"Colchón", dep:"modelo", q:"¿Cuánto tiempo aguanta sin que el negocio dé ganancia?",
+      o:[["2","Más de 6 meses"],["1","Dos o tres meses"],["0","Necesito que dé desde el primer mes"]] },
+    { id:"numeros", a:"Números", dep:"modelo", q:"¿Sabe cuántos clientes necesita al mes para no perder dinero?",
+      o:[["2","Sí, tengo el cálculo hecho"],["1","Una idea aproximada"],["0","No lo he calculado"]] },
+    { id:"competencia", a:"Competencia", dep:"validacion", q:"¿Sabe quién más hace esto en su zona?",
+      o:[["2","Los tengo estudiados: precios, público, qué les funciona"],["1","Sé que existen pero no los he estudiado"],["0","No he mirado"]] },
+    { id:"punto", a:"Punto de venta", dep:"operativo", q:"¿Dónde va a operar?",
+      o:[["2","Ya tengo el local o el canal listo"],["1","En negociación o buscando"],["0","No tengo nada definido"]] },
+    { id:"costos_cero", a:"Costos", dep:"modelo", q:"¿Sabe cuánto le va a costar producir o servir cada venta?",
+      o:[["2","Sí, tengo el costo calculado por producto"],["1","Una idea, por lo que he preguntado"],["0","No tengo idea todavía"]] }
+  ];
+
+  /* ================= dominio del negocio (solo vía en marcha) ================= */
+  var DOMINIO = [
+    { id:"costos", a:"Costos", q:"¿Sabe cuánto le cuesta producir o servir lo que vende?",
+      o:[["2","Sí, tengo el costo de cada producto calculado"],["1","Más o menos, de memoria"],["0","No lo he calculado nunca"]] },
+    { id:"fijos", a:"Gastos fijos", q:"¿Sabe cuánto gasta al mes en fijos — alquiler, nómina, servicios?",
+      o:[["2","Sí, al detalle y por categoría"],["1","Un número redondo aproximado"],["0","No lo tengo claro"]] },
+    { id:"margen", a:"Rentabilidad", q:"¿Cuál de sus productos le deja más ganancia?",
+      o:[["2","Lo sé con números, no por intuición"],["1","Creo que sé cuál, pero no lo he medido"],["0","No tengo idea"]] },
+    { id:"equilibrio", a:"Punto de equilibrio", q:"¿Cuánto tiene que vender al mes para no perder dinero?",
+      o:[["2","Tengo la cifra exacta"],["1","Un aproximado"],["0","Nunca lo he calculado"]] },
+    { id:"ausencia", a:"Operación sin usted", q:"Si usted se va una semana, ¿el negocio funciona igual?",
+      o:[["2","Sí, hay quien lo lleva y rinde cuentas"],["1","Funciona pero con problemas"],["0","No puedo irme, se desordena todo"]] },
+    { id:"procesos_doc", a:"Procesos", q:"¿Está escrito en algún lado quién hace qué en cada turno?",
+      o:[["2","Sí, hay manual o checklist y se usa"],["1","Está en mi cabeza, lo explico cuando hace falta"],["0","Cada quien hace como entiende"]] },
+    { id:"datos", a:"Datos al día", q:"Ahora mismo, sin buscar, ¿puede decirme cuánto vendió ayer?",
+      o:[["2","Sí, lo tengo en el teléfono al instante"],["1","Tendría que preguntar o revisar papeles"],["0","No sabría decirle"]] }
+  ];
+
+  /* ================= pintar diagnósticos ================= */
+  function build(list, boxId) {
+    var box = document.getElementById(boxId);
+    list.forEach(function (ar, i) {
+      var d = document.createElement("div"); d.className = "dx" + (i === 0 ? " first" : "");
+      var top = document.createElement("div"); top.className = "dx-top";
+      var a = document.createElement("span"); a.className = "dx-area"; a.textContent = ar.a;
+      var q = document.createElement("span"); q.className = "dx-q"; q.textContent = ar.q;
+      top.appendChild(a); top.appendChild(q);
+      var sel = document.createElement("select");
+      sel.id = "dx-" + ar.id;
+      sel.setAttribute("aria-label", ar.a + " — " + ar.q);
+      var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "Seleccione…"; sel.appendChild(o0);
+      ar.o.forEach(function (op) {
+        var o = document.createElement("option");
+        o.value = op[0] + "::" + op[1]; o.textContent = op[1]; sel.appendChild(o);
+      });
+      sel.addEventListener("change", onChange);
+      d.appendChild(top); d.appendChild(sel); box.appendChild(d);
+    });
+  }
+  build(AREAS, "dxA");
+  build(PREP, "dxB");
+  build(DOMINIO, "dxD");
+
+  /* ================= campos ================= */
+  var TXT_COMUN = ["nombre","rol","negocio","ciudad","contacto","sedes_lista","meta","dolor","intentado","equipo_mkt","espera","accesos"];
+  var TXT_A = ["vende","ticket","capacidad","ideal","diferencia","rivales","costo"];
+  var TXT_B = ["idea","problema_mkt","publico","precio_obj","inversion","competencia_cero","miedo"];
+  var SEL_COMUN = ["rubro","gente","urgencia","presupuesto","decide","sedes","sedes_rend"];
+  var SEL_A = ["tiempo","ventas"];
+  var SEL_B = ["apertura","ventas_obj"];
+
+  var REQ_A = ["nombre","rol","negocio","ciudad","contacto","vende","ideal","diferencia","meta","dolor"];
+  var REQ_B = ["nombre","rol","negocio","ciudad","contacto","idea","problema_mkt","publico","meta","dolor"];
+  var REQ_SEL = ["rubro","urgencia","presupuesto","sedes"];
+
+  var ALL_TXT = TXT_COMUN.concat(TXT_A, TXT_B);
+  var ALL_SEL = SEL_COMUN.concat(SEL_A, SEL_B);
+  var BOX = ["canales","tiene","herr","dispo"];
+
+  function via() {
+    var r = document.querySelector('input[name="via"]:checked');
+    return r ? r.value : "";
+  }
+  function val(id) { var e = document.getElementById(id); return e ? e.value.trim() : ""; }
+  function checks(id) {
+    var box = document.getElementById(id);
+    if (!box) return [];
+    return Array.prototype.filter.call(box.querySelectorAll("input"), function (c) { return c.checked; })
+      .map(function (c) { return c.value; });
+  }
+  function dxVal(id) {
+    var v = val("dx-" + id);
+    if (!v) return null;
+    var p = v.split("::");
+    return { s: parseInt(p[0], 10), t: p[1] };
+  }
+
+  /* ================= bifurcación ================= */
+  function applyVia() {
+    var v = via();
+    if (!v) return;
+    document.getElementById("body").hidden = false;
+    document.querySelectorAll(".via-marcha").forEach(function (e) { e.hidden = (v !== "marcha"); });
+    document.querySelectorAll(".via-cero").forEach(function (e) { e.hidden = (v !== "cero"); });
+
+    var tag = document.getElementById("viaTag");
+    tag.hidden = false;
+    tag.textContent = v === "cero" ? "Vía · Desde cero" : "Vía · En marcha";
+
+    document.getElementById("go").disabled = false;
+    rotularBoton();
+
+    document.getElementById("lblNegocio").innerHTML = v === "cero"
+      ? 'Nombre del negocio, o cómo lo llama por ahora <span class="req">*</span>'
+      : 'Nombre del negocio <span class="req">*</span>';
+    document.getElementById("lblDolor").innerHTML = v === "cero"
+      ? '¿Qué es lo que más lo frena hoy? <span class="req">*</span>'
+      : '¿Qué es lo que más le molesta hoy? <span class="req">*</span>';
+    document.getElementById("lblGente").textContent = v === "cero"
+      ? "¿Con cuánta gente piensa arrancar?" : "¿Cuánta gente trabaja ahí?";
+    document.getElementById("lblMkt").textContent = v === "cero"
+      ? "¿Quién se ocuparía del marketing?" : "¿Quién se ocupa hoy del marketing?";
+    document.getElementById("negocio").placeholder = v === "cero" ? "Todavía sin nombre / \"el bar de Los Palos Grandes\"" : "Twelve Caracas";
+    document.getElementById("lblSedes").innerHTML = v === "cero"
+      ? '¿Con cuántos puntos piensa abrir? <span class="req">*</span>'
+      : '¿Cuántas sedes o puntos de venta tiene? <span class="req">*</span>';
+    document.getElementById("lblRend").textContent = v === "cero"
+      ? "Si piensa abrir varios, ¿al mismo tiempo?" : "Si tiene más de una, ¿rinden parecido?";
+
+    onChange();
+  }
+  document.querySelectorAll('input[name="via"]').forEach(function (r) {
+    r.addEventListener("change", function () { applyVia(); save(); });
+  });
+
+  /* ================= progreso ================= */
+  function activeReq() { return via() === "cero" ? REQ_B : REQ_A; }
+  function activeDx()  { return via() === "cero" ? PREP : AREAS; }
+  function activeDom() { return via() === "cero" ? [] : DOMINIO; }
+
+  function onChange() {
+    var v = via();
+    if (!v) { document.getElementById("fill").style.width = "0%"; document.getElementById("pct").textContent = "0%"; return; }
+    var dx = activeDx(), req = activeReq(), dom = activeDom();
+    var total = req.length + REQ_SEL.length + 2 + dx.length + dom.length, done = 0;
+    req.forEach(function (i) { if (val(i)) done++; });
+    REQ_SEL.forEach(function (i) { if (val(i)) done++; });
+    if (checks("needs").length) done++;
+    if (v === "cero" ? checks("tiene").length : checks("canales").length) done++;
+    dx.forEach(function (a) { if (dxVal(a.id)) done++; });
+    dom.forEach(function (a) { if (dxVal(a.id)) done++; });
+    var p = Math.round(done / total * 100);
+    document.getElementById("fill").style.width = p + "%";
+    document.getElementById("pct").textContent = p + "%";
+    save();
+  }
+
+  /* ================= borrador ================= */
+  var KEY = "dreaming-fase1-v4", tmr;
+  function save() {
+    clearTimeout(tmr);
+    tmr = setTimeout(function () {
+      try {
+        var d = { via: via(), needs: checks("needs") };
+        BOX.forEach(function (b) { d[b] = checks(b); });
+        ALL_TXT.concat(ALL_SEL).forEach(function (i) { d[i] = val(i); });
+        AREAS.concat(PREP, DOMINIO).forEach(function (a) { d["dx-" + a.id] = val("dx-" + a.id); });
+        localStorage.setItem(KEY, JSON.stringify(d));
+        var el = document.getElementById("draft");
+        el.textContent = "Borrador guardado en este dispositivo";
+        setTimeout(function () { el.textContent = ""; }, 2200);
+      } catch (e) {}
+    }, 700);
+  }
+  function load() {
+    var d = null;
+    try { var r = localStorage.getItem(KEY); if (r) d = JSON.parse(r); } catch (e) {}
+    if (!d) return;
+    if (d.via) {
+      var rb = document.querySelector('input[name="via"][value="' + d.via + '"]');
+      if (rb) rb.checked = true;
+    }
+    ALL_TXT.concat(ALL_SEL).forEach(function (i) { var e = document.getElementById(i); if (e && d[i]) e.value = d[i]; });
+    AREAS.concat(PREP, DOMINIO).forEach(function (a) { var e = document.getElementById("dx-" + a.id); if (e && d["dx-" + a.id]) e.value = d["dx-" + a.id]; });
+    ["needs"].concat(BOX).forEach(function (g) {
+      if (!d[g]) return;
+      var box = document.getElementById(g);
+      if (!box) return;
+      box.querySelectorAll("input").forEach(function (c) { c.checked = d[g].indexOf(c.value) > -1; });
+    });
+    if (d.via) applyVia();
+  }
+
+  ALL_TXT.concat(ALL_SEL).forEach(function (i) {
+    var e = document.getElementById(i);
+    if (e) e.addEventListener(e.tagName === "SELECT" ? "change" : "input", onChange);
+  });
+  ["needs"].concat(BOX).forEach(function (g) {
+    var box = document.getElementById(g);
+    if (box) box.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", onChange); });
+  });
+
+  /* ================= prioridad ================= */
+  function prioridad() {
+    var u = val("urgencia"), p = val("presupuesto"),
+        v = via() === "cero" ? val("ventas_obj") : val("ventas"), s = 0;
+    if (u === "Ya, es urgente") s += 3; else if (u === "Este mes") s += 2; else if (u === "En 2 o 3 meses") s += 1;
+    if (p === "Más de 1.200 $" || p === "600 a 1.200 $") s += 3;
+    else if (p === "300 a 600 $") s += 2; else if (p === "150 a 300 $") s += 1;
+    if (v === "Más de 50.000 $" || v === "20.000 a 50.000 $") s += 2;
+    else if (v === "5.000 a 20.000 $") s += 1;
+    if (val("decide") === "Yo solo") s += 1;
+    if (s >= 6) return { t:"Prioridad alta", w:"· atender esta semana", c:"#3DDC97", k:"ALTA" };
+    if (s >= 3) return { t:"Prioridad media", w:"· diagnóstico gratis primero", c:"#FF7A45", k:"MEDIA" };
+    return { t:"Prioridad baja", w:"· dejar en seguimiento", c:"#6A6F8A", k:"BAJA" };
+  }
+
+  /* ===== cuántos frentes caben con ese presupuesto ===== */
+  function cupo() {
+    var p = val("presupuesto");
+    if (p === "Más de 1.200 $")  return { n:4, t:"Más de 1.200 $ al mes", d:"alcanza para cuatro frentes a la vez" };
+    if (p === "600 a 1.200 $")   return { n:3, t:"600 a 1.200 $ al mes",  d:"alcanza para tres frentes" };
+    if (p === "300 a 600 $")     return { n:2, t:"300 a 600 $ al mes",    d:"alcanza para dos frentes bien hechos" };
+    if (p === "150 a 300 $")     return { n:1, t:"150 a 300 $ al mes",    d:"alcanza para un frente a la vez" };
+    if (p === "Menos de 150 $")  return { n:1, t:"Menos de 150 $ al mes", d:"alcanza para un solo frente, y conviene que sea el diagnóstico gratis" };
+    return { n:2, t:"Presupuesto por definir", d:"se asumen dos frentes hasta que haya una cifra" };
+  }
+
+  /* ===== contradicciones entre lo que quiere, cuándo y con cuánto ===== */
+  function alertas(v, needs, score, rojos) {
+    var A = [], u = val("urgencia"), p = val("presupuesto"), cp = cupo();
+    var pedidosReales = needs.filter(function (n) { return n !== "nose"; }).length;
+    var bajo = (p === "Menos de 150 $" || p === "150 a 300 $");
+    function add(t, interno) { A.push({ t:t, int:!!interno }); }
+
+    if (u === "Ya, es urgente" && bajo)
+      add("Dice que es urgente pero el presupuesto es de " + p.toLowerCase() + ". Urgencia y presupuesto no concuerdan: hay que elegir entre esperar o recortar el alcance.");
+
+    if (pedidosReales > cp.n)
+      add("Pidió " + pedidosReales + " cosas y el presupuesto alcanza para " + cp.n + ". Las otras " + (pedidosReales - cp.n) + " pasan a una segunda fase, por escrito.");
+
+    if (u === "Estoy explorando, sin prisa" && (p === "600 a 1.200 $" || p === "Más de 1.200 $"))
+      add("Tiene presupuesto pero no urgencia. Es el perfil que más se enfría: cerrar una fecha concreta en la primera conversación.", true);
+
+    if (p === "No sé todavía, quiero ver opciones")
+      add("Sin cifra de presupuesto no se puede cotizar nada en serio. El diagnóstico gratis va primero y con eso se define el rango.");
+
+    if (val("decide") === "Tengo que consultarlo con otra persona")
+      add("No decide solo. Quien decide tiene que estar en la conversación, o la propuesta se cae después de aprobada.", true);
+
+    if (v === "cero") {
+      if (u === "Ya, es urgente" && score["validacion"].s === 0)
+        add("Quiere abrir ya y todavía nadie ha confirmado que pagaría. La prisa en esta etapa es el riesgo más caro del proyecto.");
+      if (score["capital"].s === 0 && !bajo)
+        add("Dice que puede invertir " + p.toLowerCase() + " al mes pero el capital de arranque no está completo. Verificar de dónde sale el dinero antes de firmar.", true);
+      if (val("apertura") === "En menos de 1 mes" && score["punto"].s === 0)
+        add("Quiere abrir en menos de un mes sin local definido. La fecha no es realista y hay que ajustarla.");
+    } else {
+      if (rojos.length >= 5 && bajo)
+        add("Hay " + rojos.length + " áreas en crítico y el presupuesto alcanza para un frente. Arreglar todo a la vez no es posible: se ataca la que más dinero devuelve.");
+    }
+    return A;
+  }
+
+  /* ===== qué significa cada área, en palabras normales ===== */
+  var SIGN = {
+    reputacion: ["Lo que dicen de usted en internet", "Las reseñas de Google son lo primero que ve alguien que no lo conoce. Responderlas es gratis y mejora su posición."],
+    atencion:   ["La rapidez con que responde", "Quien escribe y no recibe respuesta en la hora se va con el que sí respondió."],
+    oferta:     ["Su razón para que lo elijan", "Sin una razón clara y distinta, la decisión del cliente se vuelve solo precio."],
+    web:        ["Su página", "No hace falta un sitio grande, sí un lugar propio donde vean el menú y puedan reservar o pedir."],
+    google:     ["Si lo encuentran al buscar", "La mayoría de la gente busca en Google antes de salir. Si no aparece ahí, no existe para ellos."],
+    redes:      ["Su presencia en redes", "Publicar seguido y con alguien a cargo es lo que mantiene el negocio en la cabeza de la gente."],
+    anuncios:   ["Su publicidad pagada", "Bien dirigida, llega a quien todavía no lo conoce y llena los días flojos. Suelta, es gasto sin aprendizaje."],
+    medicion:   ["Saber de dónde llega su gente", "Es la base de todo: sin esto no hay forma de saber qué está funcionando y qué no."],
+    retencion:  ["Que los clientes vuelvan", "Un cliente que repite cuesta mucho menos que uno nuevo, y es el que sostiene el negocio."],
+    procesos:   ["El control por dentro", "Inventario, caja y cierres. Es donde se pierde el dinero sin que nadie se dé cuenta."],
+    claridad:   ["Qué va a vender", "Mientras más definido, menos dinero se pierde probando."],
+    validacion: ["Si alguien pagaría por esto", "Lo más importante de todo: una sola venta confirmada vale más que cien opiniones."],
+    rubro:      ["Su experiencia en el ramo", "Conocerlo por dentro ahorra los errores caros del primer año."],
+    capital:    ["El dinero para arrancar", "Arrancar sin el capital completo suele terminar en cerrar a mitad de camino."],
+    colchon:    ["Cuánto aguanta sin ganar", "Casi ningún negocio da ganancia el primer mes. El colchón es lo que compra tiempo."],
+    numeros:    ["Sus números", "Saber cuántos clientes necesita para no perder dinero cambia todas las decisiones."],
+    competencia:["Conocer a su competencia", "Saber qué cobran y qué les funciona es la investigación más barata que existe."],
+    punto:      ["Dónde va a operar", "El local o el canal define a quién puede alcanzar y a qué costo."],
+    costos_cero:["Cuánto le costará cada venta", "Sin esto no se puede poner un precio que deje ganancia."]
+  };
+
+  var NEED_DEP = {
+    clientes:["ofensiva"], sistema:["sistemas"], control:["sistemas"], automatizar:["sistemas"],
+    asistente:["atencion"], presencia:["presencia"], reputacion:["reputacion"],
+    contenido:["contenido"], equipo:["sistemas"], personal:["personal"],
+    marca:["marca"], validar:["validacion"]
+  };
+  var LBL = { nombre:"Nombre", rol:"Rol", negocio:"Nombre del negocio", ciudad:"Ciudad", contacto:"Contacto",
+    vende:"Qué vende", ideal:"Mejor cliente", diferencia:"Por qué lo eligen",
+    idea:"La idea", problema_mkt:"Qué problema resuelve", publico:"A quién le vende",
+    meta:"Meta a 6 meses", dolor:"El dolor", rubro:"Rubro", urgencia:"Urgencia", presupuesto:"Presupuesto", sedes:"Cuántas sedes" };
+
+  /* orden fijo de fundación */
+  var ORDEN_CERO = ["validacion","modelo","marca","operativo","sistemas","presencia","lanzamiento","medicion"];
+
+  /* ================= analizar ================= */
+  document.getElementById("go").addEventListener("click", function () {
+    var v = via();
+    if (!v) return;
+    var msg = document.getElementById("msg"), faltan = [];
+    document.querySelectorAll(".bad").forEach(function (e) { e.classList.remove("bad"); });
+
+    var req = activeReq(), dxList = activeDx();
+    req.concat(REQ_SEL).forEach(function (id) {
+      if (!val(id)) { faltan.push(LBL[id] || id); document.getElementById(id).classList.add("bad"); }
+    });
+    var needs = checks("needs");
+    if (!needs.length) faltan.push("Qué cree que necesita");
+    if (v === "cero") { if (!checks("tiene").length) faltan.push("Qué tiene ya listo"); }
+    else { if (!checks("canales").length) faltan.push("Cómo le llegan los clientes hoy"); }
+    var sinDx = [];
+    dxList.forEach(function (a) {
+      if (!dxVal(a.id)) { sinDx.push(a.a); document.getElementById("dx-" + a.id).classList.add("bad"); }
+    });
+    if (sinDx.length) faltan.push((v === "cero" ? "Preparación: " : "Diagnóstico: ") + sinDx.join(", "));
+
+    var domList = activeDom(), sinDom = [];
+    domList.forEach(function (a) {
+      if (!dxVal(a.id)) { sinDom.push(a.a); document.getElementById("dx-" + a.id).classList.add("bad"); }
+    });
+    if (sinDom.length) faltan.push("Conocimiento del negocio: " + sinDom.join(", "));
+
+    if (faltan.length) {
+      msg.className = "msg";
+      msg.textContent = "Falta completar: " + faltan.join(" · ");
+      var f = document.querySelector(".bad") || document.getElementById("needs");
+      f.scrollIntoView({ block:"center", behavior:"smooth" });
+      return;
+    }
+
+    /* --- semáforo --- */
+    var rojos = [], amarillos = [], verdes = [], score = {};
+    dxList.forEach(function (a) {
+      var r = dxVal(a.id); score[a.id] = r;
+      if (r.s === 0) rojos.push(a); else if (r.s === 1) amarillos.push(a); else verdes.push(a);
+    });
+
+    var COL = { 0:"#FF5C5C", 1:"#FF7A45", 2:"#3DDC97" };
+    var NOM = v === "cero" ? { 0:"Falta", 1:"A medias", 2:"Listo" } : { 0:"Crítico", 1:"Flojo", 2:"Sano" };
+    document.getElementById("semT").textContent = v === "cero" ? "Semáforo de preparación" : "Semáforo del negocio";
+    var semBox = document.getElementById("sem");
+    semBox.innerHTML = "";
+    dxList.forEach(function (a) {
+      var s = score[a.id].s;
+      var i = document.createElement("div"); i.className = "sem-i";
+      var dt = document.createElement("span"); dt.className = "dot";
+      dt.style.background = COL[s]; dt.style.boxShadow = "0 0 10px " + COL[s];
+      var b = document.createElement("div");
+      var t = document.createElement("b"); t.textContent = a.a;
+      var e = document.createElement("em"); e.textContent = NOM[s];
+      b.appendChild(t); b.appendChild(e);
+      i.appendChild(dt); i.appendChild(b); semBox.appendChild(i);
+    });
+    document.getElementById("semCap").textContent = v === "cero"
+      ? rojos.length + " sin resolver · " + amarillos.length + " a medias · " + verdes.length + " listas"
+      : rojos.length + " en crítico · " + amarillos.length + " flojas · " + verdes.length + " sanas";
+
+    /* --- dominio del negocio --- */
+    var domScore = {}, domRojos = [], domAmb = [], domVerdes = [];
+    domList.forEach(function (a) {
+      var r = dxVal(a.id); domScore[a.id] = r;
+      if (r.s === 0) domRojos.push(a); else if (r.s === 1) domAmb.push(a); else domVerdes.push(a);
+    });
+    var domPts = domList.length ? domList.reduce(function (s, a) { return s + domScore[a.id].s; }, 0) : null;
+    var domMax = domList.length * 2;
+    var domNivel = null;
+    if (domList.length) {
+      var pc = domPts / domMax;
+      if (pc >= 0.75) domNivel = { k:"ALTO", t:"Conoce su negocio", c:"#3DDC97",
+        d:"Sabe sus números y su operación. Se le puede proponer crecimiento directo." };
+      else if (pc >= 0.45) domNivel = { k:"MEDIO", t:"Lo conoce a medias", c:"#FF7A45",
+        d:"Tiene nociones pero por intuición, no por números. Hay que ordenar antes de escalar." };
+      else domNivel = { k:"BAJO", t:"No conoce sus números", c:"#FF5C5C",
+        d:"No sabe sus costos ni su punto de equilibrio. Traerle más clientes así multiplica la pérdida, no la ganancia." };
+    }
+    var cegado = domNivel && domNivel.k === "BAJO";
+    var ciegoCostos = domList.length && (domScore["costos"].s === 0 || domScore["margen"].s === 0);
+    var atado = domList.length && domScore["ausencia"].s === 0;
+
+    var pedidos = {};
+    needs.forEach(function (n) { (NEED_DEP[n] || []).forEach(function (d) { pedidos[d] = 1; }); });
+    var noSabe = needs.indexOf("nose") > -1;
+
+    var ahora = [], luego = [], motivos = {}, freno = null;
+    var cp = cupo();
+
+    if (v === "cero") {
+      /* ---------- VÍA DESDE CERO: orden fijo de fundación con freno ---------- */
+      var sVal = score["validacion"].s, sNum = score["numeros"].s, sCap = score["capital"].s,
+          sCol = score["colchon"].s, sComp = score["competencia"].s, sClar = score["claridad"].s,
+          sRub = score["rubro"].s, sPun = score["punto"].s;
+      var tiene = checks("tiene");
+      var tieneMarca = tiene.indexOf("Nombre decidido") > -1 && tiene.indexOf("Logo o identidad") > -1;
+      var tieneOper = tiene.indexOf("Permisos en trámite o listos") > -1 && tiene.indexOf("Local o punto") > -1;
+
+      var need = {};
+      function addM(dep, t) { motivos[dep] = motivos[dep] || []; motivos[dep].push({ t:t, c:true }); need[dep] = 1; }
+
+      if (sVal < 2) addM("validacion", sVal === 0 ? "nadie ha confirmado que pagaría" : "hay interés pero ninguna venta confirmada");
+      if (sComp === 0) addM("validacion", "no ha estudiado a la competencia");
+      if (sNum < 2) addM("modelo", sNum === 0 ? "no sabe cuántos clientes necesita para no perder" : "los números están aproximados");
+      if (sCap === 0 || sCol === 0) addM("modelo", "el capital o el colchón no alcanzan todavía");
+      if (sClar === 0) addM("modelo", "lo que va a vender no está definido");
+      if (!tieneMarca) addM("marca", "no hay nombre o identidad definida");
+      if (!tieneOper || sPun < 2) addM("operativo", "falta local, permisos o proveedores");
+      if (sRub === 0) addM("operativo", "el rubro es nuevo para él");
+      need.sistemas = 1; addM("sistemas", "que nazca con control desde el día 1, no con cuaderno");
+      need.presencia = 1; addM("presencia", "existir en Google y redes antes de abrir");
+      need.lanzamiento = 1; addM("lanzamiento", "la apertura se prepara, no se improvisa");
+      need.medicion = 1; addM("medicion", "medir desde el primer cliente");
+      Object.keys(pedidos).forEach(function (d) {
+        if (DEP[d]) { need[d] = 1; motivos[d] = motivos[d] || []; motivos[d].push({ t:"lo pidió el cliente", c:false }); }
+      });
+
+      var secuencia = ORDEN_CERO.filter(function (d) { return need[d]; });
+      Object.keys(need).forEach(function (d) { if (secuencia.indexOf(d) === -1) secuencia.push(d); });
+
+      /* freno: sin validación ni capital, no se construye nada todavía */
+      if (sVal === 0 && (sCap === 0 || sCol === 0)) {
+        freno = { t: "No construir todavía",
+          d: "Nadie ha confirmado que pagaría por esto y el capital no está completo. Invertir en marca, sistema o anuncios ahora es la forma más común de perder el dinero del arranque. Primero validar y cerrar los números; lo demás queda congelado hasta que haya una venta real." };
+        ahora = secuencia.filter(function (d) { return d === "validacion" || d === "modelo"; });
+        luego = secuencia.filter(function (d) { return ahora.indexOf(d) === -1; });
+      } else if (sVal === 0) {
+        freno = { t: "Validar antes de invertir",
+          d: "Todavía nadie ha confirmado que pagaría. El capital alcanza, así que se puede avanzar en paralelo, pero la validación va primero y de su resultado depende todo lo demás." };
+        var tope = Math.min(3, Math.max(2, cp.n));
+        ahora = secuencia.slice(0, tope);
+        luego = secuencia.slice(tope);
+      } else {
+        ahora = secuencia.slice(0, cp.n);
+        luego = secuencia.slice(cp.n);
+      }
+      document.getElementById("depT").textContent = "Ruta de fundación";
+      document.getElementById("depCap").textContent = "En este orden, y solo lo que cabe en el presupuesto. Las etapas de fundación no se barajan: cada una se apoya en la anterior.";
+
+    } else {
+      /* ---------- VÍA EN MARCHA: puntos ---------- */
+      var puntos = {};
+      function sumar(dep, pts, motivo, critico) {
+        if (!DEP[dep]) return;
+        puntos[dep] = (puntos[dep] || 0) + pts;
+        motivos[dep] = motivos[dep] || [];
+        motivos[dep].push({ t:motivo, c:!!critico });
+      }
+      rojos.forEach(function (a) { sumar(a.dep, 4, a.a + " en crítico", true); });
+      amarillos.forEach(function (a) { sumar(a.dep, 2, a.a + " flojo", false); });
+      Object.keys(pedidos).forEach(function (d) { sumar(d, 3, "lo pidió el cliente", false); });
+      if (rojos.length >= 2 || amarillos.length >= 4) sumar("medicion", 1, "hace falta medir para saber si mejora", false);
+
+      var orden = Object.keys(puntos).sort(function (a, b) {
+        if (puntos[b] !== puntos[a]) return puntos[b] - puntos[a];
+        return DEP[a].n.localeCompare(DEP[b].n);
+      });
+      if (noSabe || rojos.length >= 5) {
+        orden = ["diagnostico"].concat(orden.filter(function (d) { return d !== "diagnostico"; }));
+        motivos["diagnostico"] = [{ t: noSabe ? "el cliente no sabe qué necesita" : "demasiadas áreas en crítico para proponer sin medir", c:true }];
+      }
+
+      /* el dominio del negocio manda sobre el orden: primero los números */
+      if (ciegoCostos || cegado) {
+        sumar("sistemas", 0, "no conoce sus costos ni qué producto le deja más", true);
+        sumar("medicion", 0, "sin números no hay forma de saber si algo mejoró", true);
+        var frente = ["sistemas", "medicion"];
+        orden = frente.concat(orden.filter(function (d) { return frente.indexOf(d) === -1; }));
+        freno = { t: "Ordenar los números antes de crecer",
+          d: domNivel.d + " Antes de traerle un solo cliente nuevo hay que levantar costos, márgenes y punto de equilibrio. Una campaña exitosa sobre un negocio que pierde dinero por venta solo hace que pierda más rápido." };
+      } else if (atado) {
+        sumar("sistemas", 0, "el negocio no funciona sin él presente", true);
+        orden = ["sistemas"].concat(orden.filter(function (d) { return d !== "sistemas"; }));
+      }
+      ahora = orden.slice(0, cp.n); luego = orden.slice(cp.n);
+      document.getElementById("depT").textContent = "Departamentos que deben trabajar";
+      document.getElementById("depCap").textContent = "Lo primero es lo que está en rojo y además duele — recortado a lo que el presupuesto sostiene.";
+    }
+
+    /* --- freno visual --- */
+    var stopEl = document.getElementById("stop");
+    if (freno) {
+      stopEl.hidden = false; stopEl.innerHTML = "";
+      var sb = document.createElement("b"); sb.textContent = freno.t;
+      stopEl.appendChild(sb); stopEl.appendChild(document.createTextNode(freno.d));
+    } else { stopEl.hidden = true; }
+
+    /* --- pintar departamentos --- */
+    var depBox = document.getElementById("deps");
+    depBox.innerHTML = "";
+    ahora.forEach(function (k, i) {
+      var d = document.createElement("div"); d.className = "dep";
+      var n = document.createElement("span"); n.className = "dep-n"; n.textContent = (i + 1);
+      var b = document.createElement("div"); b.className = "dep-b";
+      var t = document.createElement("b"); t.textContent = DEP[k].n;
+      var p = document.createElement("p"); p.textContent = DEP[k].d;
+      var w = document.createElement("div"); w.className = "why";
+      var ms = motivos[k] || [];
+      w.appendChild(document.createTextNode("Porque: "));
+      ms.forEach(function (m, j) {
+        var el = m.c ? document.createElement("s") : document.createElement("span");
+        el.textContent = m.t; w.appendChild(el);
+        if (j < ms.length - 1) w.appendChild(document.createTextNode(" · "));
+      });
+      var c = document.createElement("code"); c.textContent = DEP[k].s;
+      b.appendChild(t); b.appendChild(p); b.appendChild(w); b.appendChild(c);
+      d.appendChild(n); d.appendChild(b); depBox.appendChild(d);
+    });
+
+    var laterEl = document.getElementById("later");
+    if (luego.length) {
+      laterEl.hidden = false; laterEl.innerHTML = "";
+      var lb = document.createElement("b");
+      lb.textContent = (freno ? "Congelado hasta validar: " : "Segunda fase, no ahora: ");
+      laterEl.appendChild(lb);
+      laterEl.appendChild(document.createTextNode(luego.map(function (k) { return DEP[k].n; }).join(" · ")));
+      laterEl.appendChild(document.createElement("br"));
+      laterEl.appendChild(document.createTextNode(freno
+        ? "No se cobra ni se construye nada de esto antes de que haya una venta real confirmada."
+        : "Abrir más de cuatro frentes a la vez es la forma más segura de no mover ninguno."));
+    } else { laterEl.hidden = true; }
+
+    /* --- tarjeta de dominio --- */
+    var domCard = document.getElementById("domCard");
+    if (domNivel) {
+      domCard.hidden = false;
+      var dd = document.getElementById("domDot");
+      dd.style.background = domNivel.c; dd.style.boxShadow = "0 0 12px " + domNivel.c;
+      var dt2 = document.getElementById("domT");
+      dt2.textContent = domNivel.t; dt2.style.color = domNivel.c;
+      document.getElementById("domW").textContent = "· " + domPts + " de " + domMax + " puntos";
+      document.getElementById("domCap").textContent = domNivel.d;
+      var dsem = document.getElementById("domSem");
+      dsem.innerHTML = "";
+      var DNOM = { 0:"No lo sabe", 1:"Por intuición", 2:"Con números" };
+      domList.forEach(function (a) {
+        var s = domScore[a.id].s;
+        var i = document.createElement("div"); i.className = "sem-i";
+        var dot = document.createElement("span"); dot.className = "dot";
+        dot.style.background = COL[s]; dot.style.boxShadow = "0 0 10px " + COL[s];
+        var b = document.createElement("div");
+        var t = document.createElement("b"); t.textContent = a.a;
+        var e = document.createElement("em"); e.textContent = DNOM[s];
+        b.appendChild(t); b.appendChild(e);
+        i.appendChild(dot); i.appendChild(b); dsem.appendChild(i);
+      });
+    } else { domCard.hidden = true; }
+
+    /* --- recomendaciones --- */
+    var RECO = [], NOHACER = [];
+    function rec(plazo, t, d, costo) { RECO.push({ p:plazo, t:t, d:d, c:costo }); }
+    function no(t, d) { NOHACER.push({ t:t, d:d }); }
+
+    var multi = ["Dos","Tres a cinco","Más de cinco"].indexOf(val("sedes")) > -1;
+    var rend = val("sedes_rend");
+
+    /* === SIEMPRE, sin importar las respuestas: saber de dónde viene cada cliente === */
+    (function atribucion() {
+      var porSede = multi ? " y en qué sede" : "";
+      if (v === "cero") {
+        rec("ya", "Nacer preguntando \"¿cómo nos conoció?\"",
+          "Desde el primer cliente, antes incluso de abrir del todo: anotar de dónde vino cada uno" + porSede + ". Es gratis, toma cinco segundos y al tercer mes le dice exactamente dónde invertir y dónde no. Los negocios que empiezan a medir después nunca recuperan esos primeros meses de información.", "Gratis");
+        return;
+      }
+      var m = score["medicion"].s;
+      if (m === 0) {
+        rec("ya", "Preguntar a cada cliente cómo nos conoció — empezar hoy",
+          "Una pregunta en la puerta o al cobrar, y una raya en una hoja: Instagram, Google, recomendación, pasaba por aquí, ya era cliente" + porSede + ". En papel está bien para empezar. Esto es lo primero de todo: sin saber de dónde viene su gente, cualquier plan es una apuesta y cualquier resultado es imposible de explicar.", "Gratis");
+      } else if (m === 1) {
+        rec("ya", "Convertir la intuición en registro",
+          "Dice que lo sabe más o menos, y eso es justo el problema: la intuición no se puede comparar entre meses ni defender ante una decisión de dinero. Misma pregunta a cada cliente, anotada" + porSede + ", y en dos semanas tiene datos en lugar de impresiones.", "Gratis");
+      } else {
+        rec("ya", "Cruzar el origen del cliente con día, sede y producto",
+          "Ya mide de dónde llegan, que es más de lo que hace casi nadie. El siguiente nivel es cruzarlo: qué canal trae gente los días flojos, qué canal trae el ticket más alto" + (multi ? ", y qué canal funciona en cada sede" : "") + ". Ahí se decide dónde poner cada dólar.", "Gratis");
+      }
+    })();
+
+    if (v === "cero") {
+      if (score["validacion"].s === 0)
+        rec("ya", "Hablar con 10 clientes posibles antes de gastar un dólar",
+          "Diez conversaciones de 15 minutos con gente del público que describió. Pregunte cuánto pagaría y qué lo haría venir. Si no consigue diez, el mercado no está donde cree.", "Gratis");
+      if (score["numeros"].s < 2 || score["costos_cero"].s < 2)
+        rec("ya", "Calcular el punto de equilibrio en una hoja",
+          "Costo por plato o servicio, gastos fijos del mes, y cuántas ventas hacen falta para no perder. Es una tarde de trabajo y define si el proyecto se sostiene.", "Gratis");
+      if (score["competencia"].s < 2)
+        rec("ya", "Visitar como cliente a los tres rivales más cercanos",
+          "Consumir, fotografiar la carta, anotar precios y contar cuánta gente había y a qué hora. Es la mejor investigación de mercado que existe y es casi gratis.", "Bajo");
+      if (multi)
+        rec("mes1", "Abrir un solo punto primero",
+          "Abrir varios a la vez multiplica el riesgo antes de saber si el modelo funciona. Un punto, tres meses de números reales, y después el segundo.", "Ahorro");
+      rec("mes1", "Reservar el nombre antes de diseñar el logo",
+        "Comprobar que el nombre esté libre en Instagram, en dominio .com y en el registro. Diseñar primero y descubrir después que está tomado cuesta todo de nuevo.", "Bajo");
+      rec("mes1", "Nacer con el control puesto",
+        "Inventario, caja y roles desde el día uno. Montarlo después, con el negocio andando y la gente acostumbrada al cuaderno, cuesta tres veces más.", "Inversión");
+      if (score["punto"].s === 2)
+        rec("mes1", "Abrir el Google Maps antes de abrir la puerta",
+          "La ficha de Google tarda en ganar posición. Crearla semanas antes de abrir hace que el día de la apertura ya aparezca en las búsquedas de la zona.", "Gratis");
+    } else {
+      if (score["medicion"].s === 0)
+        rec("ya", "Registro diario de ventas, en papel si hace falta",
+          "Cada día: cuánto se vendió, en qué sede, qué producto salió más y cuántas personas entraron. Dos semanas de esto valen más que cualquier campaña, porque sin esto no hay forma de saber si algo funcionó.", "Gratis");
+      if (ciegoCostos)
+        rec("ya", "Costo real de sus diez productos más vendidos",
+          "Lo que cuesta cada uno en insumos, servido en el plato. Es la única forma de saber cuál le deja dinero y cuál se lo quita. Hoy puede estar vendiendo más del que menos le rinde.", "Gratis");
+      if (score["reputacion"].s < 2)
+        rec("ya", "Responder todas las reseñas pendientes esta semana",
+          "Las buenas y las malas, una por una, con nombre y sin plantilla. Es gratis, mejora la posición en Google y es lo primero que mira quien lo busca por primera vez.", "Gratis");
+      if (score["retencion"].s < 2)
+        rec("ya", "Lista de quién repite",
+          "Nombre, teléfono y fecha de cada cliente que vuelve. Con esa lista se hacen cumpleaños, referidos y recuperación. Sin ella, cada mes se empieza de cero.", "Gratis");
+      if (score["procesos"].s === 0 || (domList.length && domScore["procesos_doc"].s === 0))
+        rec("mes1", "Checklist de apertura y cierre, escrito y firmado",
+          "Una hoja por turno con lo que hay que hacer y quién lo hizo. Es lo que convierte \"cada quien hace como entiende\" en una operación que no depende de usted.", "Gratis");
+      if (atado)
+        rec("mes1", "Un responsable por turno que rinda cuentas",
+          "Alguien con nombre que cierre y reporte. Mientras todo pase por sus manos, el negocio no puede crecer porque usted es el techo.", "Bajo");
+      if (multi && (rend === "No sé, no las comparo por separado" || !rend))
+        rec("ya", "Separar los números por sede",
+          "El problema casi nunca está repartido en partes iguales: suele haber una sede que sostiene y otra que arrastra. Mezclar los números esconde exactamente el dato que necesita.", "Gratis");
+      if (multi && rend === "Una rinde mucho más que las otras")
+        rec("ya", "Averiguar qué hace distinto la sede que rinde",
+          "La respuesta ya está dentro de su negocio: horario, equipo, ubicación o producto. Copiarla a la otra sede es más rápido y más barato que cualquier campaña nueva.", "Gratis");
+      if (score["oferta"].s === 2 && val("dolor").toLowerCase().indexOf("vac") > -1)
+        rec("mes1", "Una oferta hecha para el día flojo, no una promoción general",
+          "Su oferta ya funciona los días buenos. El día vacío necesita su propia razón para venir, con nombre y hora fija, no un descuento general que además le baja el margen de los días llenos.", "Bajo");
+      if (score["atencion"].s === 2 && score["reputacion"].s < 2)
+        rec("ya", "Pedir la reseña al final de cada visita",
+          "Ya responde rápido y bien: eso es justo lo que hace que la gente acepte dejar reseña. Un QR en la mesa o en la cuenta y pedirlo de palabra convierte su mejor área en la que está floja.", "Gratis");
+      if (score["redes"].s === 2 && score["medicion"].s < 2)
+        rec("mes1", "Juzgar el contenido por clientes, no por likes",
+          "El contenido ya existe y hay quien lo haga. Una vez que esté anotando de dónde viene cada cliente, se puede ver qué publicación de qué semana trajo gente de verdad. Los likes no pagan la nómina y pueden estar premiando el contenido equivocado.", "Gratis");
+      if (score["anuncios"].s === 1)
+        rec("mes1", "Dejar de impulsar publicaciones al azar",
+          "Impulsar de vez en cuando no es publicidad, es gasto suelto. O presupuesto fijo con objetivo de reservas y medición, o nada: lo suelto no deja aprendizaje ni resultado.", "Ahorro");
+      if (score["redes"].s === 2 || score["retencion"].s === 2)
+        rec("mes2", "Convertir la comunidad que ya tiene en semilla de anuncios",
+          "Una cuenta activa alcanza orgánicamente a una fracción de sus seguidores, y casi todos ya son clientes. Con esa misma audiencia se arman públicos similares y retargeting, que es la forma más barata de llegar a quien todavía no lo conoce. Objetivo: reservas, nunca seguidores ni alcance.", "Inversión");
+      if (score["oferta"].s === 2 && score["anuncios"].s < 2)
+        rec("mes2", "Anuncio con cerco geográfico para el día flojo",
+          "Un anuncio que solo corre el día débil, solo en los kilómetros alrededor del local y solo a quien no ha venido todavía. Eso el contenido orgánico no lo puede hacer, y es lo que llena un día concreto.", "Inversión");
+      if (score["web"].s === 0)
+        rec("mes2", "Una página de una sola oferta con botón de WhatsApp",
+          "No hace falta un sitio completo. Una página que cargue rápido en celular, con la oferta, la ubicación y un botón que abra WhatsApp.", "Inversión");
+    }
+
+    /* --- lo que NO hay que hacer --- */
+    if (ciegoCostos || cegado)
+      no("No invertir en anuncios hasta conocer el margen", "El problema no es la publicidad: es que sin saber cuánto deja cada venta, un anuncio exitoso puede estar haciéndole perder dinero más rápido. Levantar costos primero — son días, no meses — y después invertir con la cuenta clara.");
+    if (needs.indexOf("clientes") > -1 && score["medicion"] && score["medicion"].s === 0)
+      no("No pagar por alcance; pagar por reservas", "Pidió más clientes y no sabe de dónde llegan los que ya tiene. El error no es hacer anuncios, es elegir el objetivo equivocado: alcance y seguidores se ven bien en el reporte y no llenan mesas. El objetivo tiene que ser reserva o pedido, y tiene que poder contarse.");
+    if (val("presupuesto") === "No sé todavía, quiero ver opciones")
+      no("No firmar nada con precio todavía", "Sin cifra de presupuesto, cualquier propuesta es una adivinanza. Diagnóstico gratis primero.");
+    if (v !== "cero" && score["web"] && score["web"].s === 0)
+      no("No pagar una web antes de verificar si ya tiene una", "Es frecuente que exista una web o una página de pedidos que el dueño no sabe que tiene, montada por un community manager o un socio. Confirmarlo antes de cotizar.");
+    if (multi)
+      no("No proponer un sistema de una sola sede", "Con varias sedes hace falta roles por punto, reportes consolidados y comparación entre sedes. Un sistema de sede única se queda corto al mes.");
+    if (v === "cero" && score["validacion"].s === 0)
+      no("No invertir en marca, local ni sistema todavía", "Nadie ha confirmado que pagaría. Todo gasto antes de la primera venta real es apuesta, no inversión.");
+
+    /* --- lo que Claude debe verificar --- */
+    var VER = [];
+    VER.push(["Identidad y marca", "Buscar \"" + val("negocio") + "\" en Google, Instagram, TikTok y Maps. Confirmar que existe, si el nombre está libre o repetido, y qué imagen proyecta hoy."]);
+    if (v === "cero") {
+      VER.push(["Nombre disponible", "Comprobar si el nombre está tomado en Instagram, en dominios y en el registro mercantil de la zona antes de diseñar nada."]);
+      VER.push(["Demanda real", "Buscar cuánta gente busca este rubro en " + val("ciudad") + " y qué dicen las reseñas de los competidores sobre lo que falta."]);
+      VER.push(["Competencia que no mencionó", "Mapear los rivales directos e indirectos de la zona, no solo los que el cliente nombró."]);
+      VER.push(["Precios del mercado", "Contrastar el precio que piensa cobrar (" + (val("precio_obj") || "sin especificar") + ") con lo que cobran los de la zona."]);
+    } else {
+      VER.push(["Reseñas reales", "Contar las reseñas de Google y su promedio, y ver si de verdad están respondidas. El cliente respondió: \"" + score["reputacion"].t + "\""]);
+      VER.push(["Posición en Google", "Buscar el rubro + la zona desde una ventana limpia y ver en qué puesto sale. El cliente respondió: \"" + score["google"].t + "\""]);
+      VER.push(["Web", "Abrir la web en celular: si carga, si se puede reservar o comprar, y cuánto tarda. El cliente respondió: \"" + score["web"].t + "\""]);
+      VER.push(["Redes", "Revisar fecha de la última publicación, frecuencia real y qué contenido le funcionó. El cliente respondió: \"" + score["redes"].t + "\""]);
+      VER.push(["Anuncios activos", "Revisar la biblioteca de anuncios de Meta del cliente y de sus rivales. El anuncio que lleva más tiempo activo es el que funciona."]);
+      if (val("rivales")) VER.push(["Rivales que nombró", "Estudiar a " + val("rivales") + ": precios, público, contenido que pega y quejas repetidas en sus reseñas."]);
+      VER.push(["Competencia oculta", "Buscar los rivales que el cliente NO mencionó, incluida la competencia indirecta que se lleva el mismo dinero."]);
+    }
+    if (ciegoCostos) VER.push(["Números del negocio", "Pedir en la primera reunión: lista de costos por producto, gastos fijos del último mes y ventas de los últimos tres meses. Sin esto no se propone campaña."]);
+    if (val("accesos")) VER.push(["Accesos", "Confirmar a nombre de quién están: " + val("accesos") + ". Nunca pedir contraseñas — solo acceso delegado."]);
+
+    /* --- pintar recomendaciones --- */
+    var PLAZO = { ya:"Esta semana", mes1:"Mes 1", mes2:"Mes 2 en adelante" };
+    var COSTO_COL = { "Gratis":"#3DDC97", "Ahorro":"#3DDC97", "Bajo":"#FF7A45", "Inversión":"#8B5CF6" };
+    var recBox = document.getElementById("reco");
+    recBox.innerHTML = "";
+    ["ya","mes1","mes2"].forEach(function (pz) {
+      var lote = RECO.filter(function (r) { return r.p === pz; });
+      if (!lote.length) return;
+      var h = document.createElement("div");
+      h.className = "dx-area";
+      h.style.marginTop = "18px";
+      h.style.marginBottom = "4px";
+      h.textContent = PLAZO[pz] + " · " + lote.length;
+      recBox.appendChild(h);
+      lote.forEach(function (r, i) {
+        var d = document.createElement("div"); d.className = "dep";
+        var n = document.createElement("span"); n.className = "dep-n";
+        n.textContent = (i + 1); n.style.color = COSTO_COL[r.c] || "#8B5CF6";
+        var b = document.createElement("div"); b.className = "dep-b";
+        var t = document.createElement("b"); t.textContent = r.t;
+        var p = document.createElement("p"); p.textContent = r.d;
+        var c = document.createElement("code");
+        c.textContent = r.c;
+        c.style.color = COSTO_COL[r.c] || "#8B5CF6";
+        c.style.background = "transparent";
+        c.style.border = "1px solid " + (COSTO_COL[r.c] || "#8B5CF6");
+        b.appendChild(t); b.appendChild(p); b.appendChild(c);
+        d.appendChild(n); d.appendChild(b); recBox.appendChild(d);
+      });
+    });
+    if (!RECO.length) {
+      var vacio = document.createElement("p");
+      vacio.className = "cap";
+      vacio.textContent = "Sus respuestas no activaron recomendaciones automáticas. El caso se decide en la conversación.";
+      recBox.appendChild(vacio);
+    }
+
+    var noBox = document.getElementById("noreco");
+    noBox.innerHTML = "";
+    if (NOHACER.length) {
+      var nh = document.createElement("div");
+      nh.className = "dx-area";
+      nh.style.marginTop = "22px"; nh.style.marginBottom = "8px"; nh.style.color = "#FF5C5C";
+      nh.textContent = "Lo que NO hay que hacer todavía · " + NOHACER.length;
+      noBox.appendChild(nh);
+      NOHACER.forEach(function (x) {
+        var w = document.createElement("div"); w.className = "stop";
+        w.style.marginBottom = "10px";
+        var b = document.createElement("b"); b.textContent = x.t;
+        var p = document.createElement("div"); p.textContent = x.d;
+        w.appendChild(b); w.appendChild(p); noBox.appendChild(w);
+      });
+    }
+
+    var verBox = document.getElementById("verif");
+    verBox.innerHTML = "";
+    VER.forEach(function (x, i) {
+      var d = document.createElement("div"); d.className = "dep";
+      var n = document.createElement("span"); n.className = "dep-n"; n.textContent = (i + 1);
+      var b = document.createElement("div"); b.className = "dep-b";
+      var t = document.createElement("b"); t.textContent = x[0];
+      var p = document.createElement("p"); p.textContent = x[1];
+      b.appendChild(t); b.appendChild(p);
+      d.appendChild(n); d.appendChild(b); verBox.appendChild(d);
+    });
+
+    /* --- urgencia, presupuesto y capacidad --- */
+    var avisos = alertas(v, needs, score, rojos);
+    if (domNivel && domNivel.k === "BAJO")
+      avisos.unshift("El cliente no conoce sus costos ni sus márgenes (" + domPts + " de " + domMax + " en dominio). No se le vende crecimiento hasta que los números estén levantados.");
+    if (atado)
+      avisos.push("El negocio no funciona sin él presente. Cualquier plan que le exija tiempo propio va a fracasar: primero hay que soltarle las manos con roles y sistema.");
+    document.getElementById("capCap").textContent =
+      cp.t + " — " + cp.d + " · urgencia: " + val("urgencia").toLowerCase();
+
+    var cap3 = document.getElementById("cap3");
+    cap3.innerHTML = "";
+    [["Urgencia", val("urgencia")],
+     ["Presupuesto", val("presupuesto")],
+     ["Frentes que caben", cp.n === 1 ? "1 frente" : cp.n + " frentes"]].forEach(function (p) {
+      var i = document.createElement("div"); i.className = "sem-i";
+      var dt = document.createElement("span"); dt.className = "dot";
+      var col = avisos.length ? "#FF7A45" : "#3DDC97";
+      dt.style.background = col; dt.style.boxShadow = "0 0 10px " + col;
+      var b = document.createElement("div");
+      var t = document.createElement("b"); t.textContent = p[0];
+      var e = document.createElement("em"); e.textContent = p[1];
+      b.appendChild(t); b.appendChild(e);
+      i.appendChild(dt); i.appendChild(b); cap3.appendChild(i);
+    });
+
+    var alBox = document.getElementById("alerts");
+    alBox.innerHTML = "";
+    if (avisos.length) {
+      avisos.forEach(function (a) {
+        var w = document.createElement("div"); w.className = "warn";
+        var p = document.createElement("p");
+        var b = document.createElement("b"); b.textContent = "Ojo. ";
+        p.appendChild(b); p.appendChild(document.createTextNode(a));
+        w.appendChild(p); alBox.appendChild(w);
+      });
+    } else {
+      var okw = document.createElement("div"); okw.className = "warn";
+      okw.style.borderLeftColor = "#3DDC97";
+      okw.style.background = "rgba(61,220,151,.07)";
+      var op = document.createElement("p");
+      var ob = document.createElement("b"); ob.style.color = "#3DDC97"; ob.textContent = "Coherente. ";
+      op.appendChild(ob);
+      op.appendChild(document.createTextNode("Lo que pide, para cuándo lo pide y lo que puede invertir concuerdan. Se puede proponer sin recortar."));
+      okw.appendChild(op); alBox.appendChild(okw);
+    }
+
+    /* --- prioridad --- */
+    var pr = prioridad();
+    var dotEl = document.getElementById("dot");
+    dotEl.style.background = pr.c; dotEl.style.boxShadow = "0 0 12px " + pr.c;
+    document.getElementById("prioT").textContent = pr.t;
+    document.getElementById("prioT").style.color = pr.c;
+    document.getElementById("prioW").textContent = pr.w;
+
+    /* --- markdown --- */
+    function needLabel(n) {
+      var el = document.querySelector('#needs input[value="' + n + '"]');
+      return el ? el.parentNode.querySelector("b").textContent : n;
+    }
+    var L = [];
+    L.push("# Ficha Fase 1 — " + val("negocio"));
+    L.push("");
+    L.push("**Vía: " + (v === "cero" ? "DESDE CERO (el negocio todavía no existe)" : "NEGOCIO EN MARCHA") + "**");
+    L.push("**Prioridad comercial: " + pr.k + "** " + pr.w.replace("· ", ""));
+    if (freno) { L.push(""); L.push("> **" + freno.t.toUpperCase() + ".** " + freno.d); }
+    L.push("");
+    L.push("## Quién es");
+    L.push("- **Contacto:** " + val("nombre") + " — " + val("rol"));
+    L.push("- **Negocio:** " + val("negocio") + " · " + val("rubro"));
+    L.push("- **Ubicación:** " + val("ciudad"));
+    L.push("- " + (v === "cero"
+      ? "**Quiere abrir:** " + (val("apertura") || "sin fecha")
+      : "**Operando:** " + (val("tiempo") || "sin especificar")));
+    L.push("- **Escribir a:** " + val("contacto"));
+    L.push("- **Sedes:** " + val("sedes") + (multi && val("sedes_rend") ? " — " + val("sedes_rend").toLowerCase() : ""));
+    if (val("sedes_lista")) {
+      val("sedes_lista").split("\n").forEach(function (s) {
+        if (s.trim()) L.push("  - " + s.trim());
+      });
+    }
+    if (multi) L.push("- ⚠️ **Varias sedes: el sistema necesita roles por punto, reportes consolidados y comparación entre sedes.**");
+    L.push("");
+
+    if (v === "cero") {
+      L.push("## La idea");
+      L.push("- **Qué quiere montar:** " + val("idea"));
+      L.push("- **Problema que resuelve:** " + val("problema_mkt"));
+      L.push("- **A quién le vende:** " + val("publico"));
+      if (val("precio_obj")) L.push("- **Precio pensado:** " + val("precio_obj"));
+      if (val("inversion")) L.push("- **Capital de arranque:** " + val("inversion"));
+      if (val("competencia_cero")) L.push("- **Competencia conocida:** " + val("competencia_cero"));
+      L.push("- **Ya tiene listo:** " + checks("tiene").join(", "));
+      if (val("miedo")) L.push("- **Su mayor miedo:** " + val("miedo"));
+    } else {
+      L.push("## Qué hace");
+      L.push("- **Vende:** " + val("vende"));
+      if (val("ticket")) L.push("- **Ticket promedio:** " + val("ticket"));
+      if (val("capacidad")) L.push("- **Capacidad:** " + val("capacidad"));
+      L.push("- **Mejor cliente:** " + val("ideal"));
+      L.push("- **Por qué lo eligen:** " + val("diferencia"));
+      if (val("rivales")) L.push("- **Rivales directos:** " + val("rivales"));
+      L.push("- **Clientes llegan hoy por:** " + checks("canales").join(", "));
+    }
+    L.push("");
+    L.push("## Qué quiere");
+    L.push("- **Meta a 6 meses:** " + val("meta"));
+    L.push("- **" + (v === "cero" ? "Lo que lo frena" : "El dolor") + ":** " + val("dolor"));
+    if (val("intentado")) L.push("- **Ya intentó:** " + val("intentado"));
+    if (v !== "cero" && val("costo")) L.push("- **Le está costando:** " + val("costo"));
+    L.push("- **Cree que necesita:** " + needs.map(needLabel).join(" · "));
+    L.push("");
+    L.push("## " + (v === "cero" ? "Semáforo de preparación" : "Semáforo de las diez áreas"));
+    L.push("");
+    L.push("| " + (v === "cero" ? "Señal" : "Área") + " | Estado | Respuesta |");
+    L.push("|---|---|---|");
+    dxList.forEach(function (a) {
+      var s = score[a.id];
+      var est = v === "cero"
+        ? (s.s === 0 ? "FALTA" : s.s === 1 ? "A medias" : "Listo")
+        : (s.s === 0 ? "CRÍTICO" : s.s === 1 ? "Flojo" : "Sano");
+      L.push("| " + a.a + " | " + est + " | " + s.t + " |");
+    });
+    L.push("");
+    L.push("**Resumen:** " + rojos.length + (v === "cero" ? " sin resolver · " : " críticas · ") + amarillos.length + (v === "cero" ? " a medias · " : " flojas · ") + verdes.length + (v === "cero" ? " listas" : " sanas"));
+    L.push("");
+
+    L.push("## Debilidades");
+    if (!rojos.length && !amarillos.length) {
+      L.push("- Ninguna área salió floja según sus respuestas. Verificar por fuera antes de creerlo.");
+    } else {
+      rojos.concat(amarillos).forEach(function (a) {
+        var s = SIGN[a.id] || [a.a, ""];
+        var nivel = domScore && score[a.id].s === 0 ? "**Lo más grave.** " : "";
+        L.push("- **" + s[0] + "** — " + nivel + s[1] + " _(respondió: " + score[a.id].t + ")_");
+      });
+    }
+    L.push("");
+    L.push("## Fortalezas");
+    if (!verdes.length) {
+      L.push("- Ninguna área salió sana. Hay que empezar por lo que más dinero devuelve, no por todo a la vez.");
+    } else {
+      verdes.forEach(function (a) {
+        var s = SIGN[a.id] || [a.a, ""];
+        L.push("- **" + s[0] + "** — " + s[1]);
+      });
+      L.push("");
+      L.push("*Las fortalezas no se tocan: se usan como palanca. Lo que ya funciona es lo más barato de aprovechar.*");
+    }
+    L.push("");
+    if (domNivel) {
+      L.push("## Dominio del negocio — " + domNivel.k + " (" + domPts + "/" + domMax + ")");
+      L.push("");
+      L.push("> " + domNivel.d);
+      L.push("");
+      L.push("| Qué | Lo sabe | Respondió |");
+      L.push("|---|---|---|");
+      domList.forEach(function (a) {
+        var s = domScore[a.id];
+        L.push("| " + a.a + " | " + (s.s === 0 ? "NO" : s.s === 1 ? "Por intuición" : "Con números") + " | " + s.t + " |");
+      });
+      L.push("");
+    }
+    L.push("## " + (v === "cero" ? "Ruta de fundación" : "Departamentos asignados"));
+    ahora.forEach(function (k, i) {
+      L.push((i + 1) + ". **" + DEP[k].n + "** — " + DEP[k].d);
+      L.push("   - Porque: " + (motivos[k] || []).map(function (m) { return m.t; }).join(" · "));
+      L.push("   - Correr: `" + DEP[k].s + "`");
+    });
+    if (luego.length) {
+      L.push("");
+      L.push("**" + (freno ? "Congelado hasta validar" : "Segunda fase, no ahora") + ":** " + luego.map(function (k) { return DEP[k].n; }).join(" · "));
+    }
+    L.push("");
+    L.push("## Tamaño y recursos");
+    L.push("- **" + (v === "cero" ? "Arranca con" : "Personal") + ":** " + (val("gente") || "sin especificar"));
+    L.push("- " + (v === "cero"
+      ? "**Necesita facturar al mes:** " + (val("ventas_obj") || "no lo ha calculado")
+      : "**Ventas al mes:** " + (val("ventas") || "no quiso decir")));
+    if (v !== "cero") L.push("- **Usa hoy:** " + (checks("herr").join(", ") || "sin especificar"));
+    L.push("- **Marketing a cargo de:** " + (val("equipo_mkt") || "sin especificar"));
+    L.push("");
+    L.push("## Urgencia, presupuesto y capacidad real");
+    L.push("- **Urgencia:** " + val("urgencia"));
+    L.push("- **Presupuesto mensual:** " + val("presupuesto"));
+    L.push("- **Quién decide:** " + (val("decide") || "sin especificar"));
+    L.push("- **Capacidad:** " + cp.t + " — " + cp.d + ". Frentes que caben: " + cp.n + ".");
+    L.push("");
+    if (avisos.length) {
+      L.push("### Contradicciones detectadas");
+      avisos.forEach(function (a) { L.push("- " + a); });
+    } else {
+      L.push("### Coherencia");
+      L.push("- Lo que pide, para cuándo y con cuánto concuerdan. Se puede proponer sin recortar.");
+    }
+    if (val("espera")) { L.push(""); L.push("## Qué espera de nosotros"); L.push(val("espera")); }
+    if (val("accesos")) { L.push(""); L.push("**Accesos que existen:** " + val("accesos")); }
+    var dp = checks("dispo");
+    if (dp.length) { L.push(""); L.push("**Disponible para hablar:** " + dp.join(", ")); }
+    L.push("");
+    L.push("## Recomendaciones");
+    ["ya","mes1","mes2"].forEach(function (pz) {
+      var lote = RECO.filter(function (r) { return r.p === pz; });
+      if (!lote.length) return;
+      L.push("");
+      L.push("### " + PLAZO[pz]);
+      lote.forEach(function (r) { L.push("- **" + r.t + "** (" + r.c + ") — " + r.d); });
+    });
+    if (!RECO.length) L.push("- Sus respuestas no activaron recomendaciones automáticas.");
+    if (NOHACER.length) {
+      L.push("");
+      L.push("### Lo que NO hay que hacer todavía");
+      NOHACER.forEach(function (x) { L.push("- **" + x.t + "** — " + x.d); });
+    }
+    L.push("");
+    L.push("## Lo que Claude debe verificar antes de proponer");
+    L.push("");
+    L.push("*Todo lo anterior lo dijo el cliente de sí mismo. Es hipótesis, no dato.*");
+    L.push("");
+    VER.forEach(function (x, i) { L.push((i + 1) + ". **" + x[0] + "** — " + x[1]); });
+    L.push("");
+    L.push("---");
+    L.push("Fase 1 DREAMING cerrada · vía " + (v === "cero" ? "desde cero" : "en marcha") + ".");
+    L.push("");
+    L.push("**Siguiente paso para Claude:** investigar la marca y los puntos de la lista de verificación, contrastar con lo que declaró el cliente, y entregar tu propio veredicto — no el del formulario. Después, abrir la etapa 1.");
+
+    var fichaMd = L.join("\n");
+    document.getElementById("md").textContent = fichaMd;
+
+    /* ---- respuestas solas, sin análisis: esto es lo único que ve el cliente ---- */
+    var R = [];
+    R.push("FICHA DREAMING — " + val("negocio"));
+    R.push("Vía: " + (v === "cero" ? "negocio por abrir" : "negocio en marcha"));
+    R.push("");
+    R.push("CONTACTO: " + val("nombre") + " (" + val("rol") + ") — " + val("contacto"));
+    R.push("NEGOCIO: " + val("negocio") + " · " + val("rubro") + " · " + val("ciudad"));
+    R.push("SEDES: " + val("sedes") + (val("sedes_rend") ? " — " + val("sedes_rend") : ""));
+    if (val("sedes_lista")) R.push("  " + val("sedes_lista").split("\n").filter(function(s){return s.trim();}).join(" | "));
+    R.push("");
+    if (v === "cero") {
+      R.push("IDEA: " + val("idea"));
+      R.push("PROBLEMA QUE RESUELVE: " + val("problema_mkt"));
+      R.push("PÚBLICO: " + val("publico"));
+      if (val("precio_obj")) R.push("PRECIO PENSADO: " + val("precio_obj"));
+      if (val("inversion")) R.push("CAPITAL: " + val("inversion"));
+      R.push("YA TIENE: " + checks("tiene").join(", "));
+      if (val("miedo")) R.push("MAYOR MIEDO: " + val("miedo"));
+      if (val("apertura")) R.push("QUIERE ABRIR: " + val("apertura"));
+    } else {
+      R.push("VENDE: " + val("vende"));
+      if (val("ticket")) R.push("TICKET: " + val("ticket"));
+      if (val("capacidad")) R.push("CAPACIDAD: " + val("capacidad"));
+      R.push("MEJOR CLIENTE: " + val("ideal"));
+      R.push("POR QUÉ LO ELIGEN: " + val("diferencia"));
+      if (val("rivales")) R.push("RIVALES: " + val("rivales"));
+      R.push("CLIENTES LLEGAN POR: " + checks("canales").join(", "));
+    }
+    R.push("");
+    R.push("META A 6 MESES: " + val("meta"));
+    R.push((v === "cero" ? "LO QUE LO FRENA: " : "EL DOLOR: ") + val("dolor"));
+    if (val("intentado")) R.push("YA INTENTÓ: " + val("intentado"));
+    if (v !== "cero" && val("costo")) R.push("LE ESTÁ COSTANDO: " + val("costo"));
+    R.push("CREE QUE NECESITA: " + needs.map(needLabel).join(", "));
+    R.push("");
+    R.push("--- " + (v === "cero" ? "PREPARACIÓN" : "DIAGNÓSTICO") + " ---");
+    dxList.forEach(function (a) { R.push(a.a + ": " + score[a.id].t); });
+    if (domList.length) {
+      R.push("");
+      R.push("--- CONOCIMIENTO DEL NEGOCIO ---");
+      domList.forEach(function (a) { R.push(a.a + ": " + domScore[a.id].t); });
+    }
+    R.push("");
+    R.push("--- RECURSOS ---");
+    R.push("PERSONAL: " + (val("gente") || "—"));
+    R.push((v === "cero" ? "NECESITA FACTURAR: " : "VENTAS AL MES: ") + ((v === "cero" ? val("ventas_obj") : val("ventas")) || "—"));
+    if (v !== "cero") R.push("USA HOY: " + (checks("herr").join(", ") || "—"));
+    R.push("MARKETING A CARGO DE: " + (val("equipo_mkt") || "—"));
+    R.push("URGENCIA: " + val("urgencia"));
+    R.push("PRESUPUESTO: " + val("presupuesto"));
+    R.push("DECIDE: " + (val("decide") || "—"));
+    if (val("espera")) { R.push(""); R.push("QUÉ ESPERA: " + val("espera")); }
+    if (val("accesos")) R.push("ACCESOS: " + val("accesos"));
+    if (checks("dispo").length) R.push("DISPONIBLE: " + checks("dispo").join(", "));
+    var respMd = R.join("\n");
+    document.getElementById("mdResp").textContent = respMd;
+
+    /* ---- qué pantalla ve cada quien ---- */
+    msg.className = "msg ok";
+    if (esDreaming) {
+      document.getElementById("out").hidden = false;
+      document.getElementById("gracias").hidden = true;
+      msg.textContent = (freno ? "Análisis listo, con freno activado. " : "Análisis listo. ") + ahora.length + " etapa(s) para ahora.";
+      document.getElementById("out").scrollIntoView({ block:"start", behavior:"smooth" });
+    } else {
+      document.getElementById("gracias").hidden = false;
+      document.getElementById("out").hidden = true;
+      document.getElementById("graciasTxt").textContent = guardado
+        ? "Su información ya llegó a DREAMING. Le vamos a escribir con el análisis de su negocio."
+        : "Gracias por el tiempo. Falta un paso para que nos llegue.";
+      msg.textContent = "Gracias. Revisamos su caso y le escribimos.";
+      document.getElementById("gracias").scrollIntoView({ block:"start", behavior:"smooth" });
+    }
+  });
+
+  /* ================= vista interna DREAMING =================
+     Se activa solo con el enlace terminado en #dreaming.
+     Sin eso —que es como le llega a cualquier cliente— la página
+     no pide cuenta, no guarda nada y no muestra ningún análisis. */
+  var esDreaming = false, guardado = false;
+  try { esDreaming = (window.location.hash || "").toLowerCase() === "#dreaming"; } catch (e) {}
+
+  function rotularBoton() {
+    var go = document.getElementById("go");
+    if (go.disabled) return;
+    go.textContent = esDreaming
+      ? (via() === "cero" ? "Analizar y armar la ruta de fundación" : "Analizar y asignar departamentos")
+      : "Enviar mi información";
+  }
+
+  if (esDreaming) {
+    var _t = document.getElementById("viaTag");
+    if (_t) { _t.hidden = false; _t.textContent = "Vista DREAMING"; }
+  }
+
+  document.getElementById("cpResp").addEventListener("click", function () {
+    var btn = this, txt = document.getElementById("mdResp").textContent;
+    function ok() { btn.textContent = "Copiado"; setTimeout(function () { btn.textContent = "Copiar"; }, 1800); }
+    function fb() {
+      try {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById("mdResp"));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = "Seleccionado"; setTimeout(function () { btn.textContent = "Copiar"; }, 2200);
+      } catch (e) {}
+    }
+    try { navigator.clipboard.writeText(txt).then(ok, fb); } catch (e) { fb(); }
+  });
+
+  document.getElementById("cp").addEventListener("click", function () {
+    var btn = this, txt = document.getElementById("md").textContent;
+    function ok() { btn.textContent = "Copiado"; setTimeout(function () { btn.textContent = "Copiar"; }, 1800); }
+    function fb() {
+      try {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById("md"));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = "Seleccionado"; setTimeout(function () { btn.textContent = "Copiar"; }, 2200);
+      } catch (e) {}
+    }
+    try { navigator.clipboard.writeText(txt).then(ok, fb); } catch (e) { fb(); }
+  });
+
+  load();
+  onChange();
+})();
+</script>
+
+</body>
+</html>

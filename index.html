@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>DREAMING — Formulario de ingreso</title>
+<title>DREAMING — Recepción</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Formulario de ingreso DREAMING. Cuéntenos quién es, qué hace y qué necesita.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="DREAMING — Formulario de ingreso">
+<meta property="og:title" content="DREAMING — Recepción">
 <meta property="og:description" content="Diez minutos. Cuéntenos de su negocio y le preparamos el análisis.">
 <meta property="og:type" content="website">
 <style>
@@ -179,7 +179,7 @@
 <div class="wrap">
 
 <header>
-  <p class="kicker">Fase 1 · Ingreso y análisis</p>
+  <p class="kicker">Recepción · Ingreso y análisis</p>
   <h1>Quién es, qué hace y <i>qué necesita</i></h1>
   <p>El formulario cambia según si el negocio ya existe o lo vamos a crear desde cero. Al terminar entrega el semáforo, los departamentos que deben trabajar y en qué orden.</p>
 </header>
@@ -1408,7 +1408,7 @@
       return el ? el.parentNode.querySelector("b").textContent : n;
     }
     var L = [];
-    L.push("# Ficha Fase 1 — " + val("negocio"));
+    L.push("# Ficha de recepción — " + val("negocio"));
     L.push("");
     L.push("**Vía: " + (v === "cero" ? "DESDE CERO (el negocio todavía no existe)" : "NEGOCIO EN MARCHA") + "**");
     L.push("**Prioridad comercial: " + pr.k + "** " + pr.w.replace("· ", ""));
@@ -1569,7 +1569,7 @@
     VER.forEach(function (x, i) { L.push((i + 1) + ". **" + x[0] + "** — " + x[1]); });
     L.push("");
     L.push("---");
-    L.push("Fase 1 DREAMING cerrada · vía " + (v === "cero" ? "desde cero" : "en marcha") + ".");
+    L.push("Recepción cerrada · vía " + (v === "cero" ? "desde cero" : "en marcha") + ".");
     L.push("");
     L.push("**Siguiente paso para Claude:** investigar la marca y los puntos de la lista de verificación, contrastar con lo que declaró el cliente, y entregar tu propio veredicto — no el del formulario. Después, abrir la etapa 1.");
 
@@ -1578,7 +1578,7 @@
 
     /* ---- respuestas solas, sin análisis: esto es lo único que ve el cliente ---- */
     var R = [];
-    R.push("FICHA DREAMING — " + val("negocio"));
+    R.push("RECEPCIÓN DREAMING — " + val("negocio"));
     R.push("Vía: " + (v === "cero" ? "negocio por abrir" : "negocio en marcha"));
     R.push("");
     R.push("CONTACTO: " + val("nombre") + " (" + val("rol") + ") — " + val("contacto"));
